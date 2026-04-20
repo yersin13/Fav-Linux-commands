@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AnnotatedText } from './TermTooltip'
 
 const HAT_LABELS = { black: 'Black Hat', red: 'Red Hat', blue: 'Blue Hat', gray: 'Utility' }
 const THREAT_LABELS = ['', 'info', 'low', 'medium', 'high', 'critical']
@@ -18,7 +19,7 @@ function CopyButton({ text }) {
   )
 }
 
-export default function SecurityCard({ video, bookmarked, learned, onBookmark, onLearn, onOpenModal }) {
+export default function SecurityCard({ video, bookmarked, learned, onBookmark, onLearn, onOpenModal, eli5, tooltips }) {
   const [open, setOpen] = useState(false)
   const [transcriptOpen, setTranscriptOpen] = useState(false)
 
@@ -64,7 +65,21 @@ export default function SecurityCard({ video, bookmarked, learned, onBookmark, o
 
       {open && (
         <div className="sec-body">
-          <p className="sec-intent">{video.security_intent}</p>
+          {video.beginner_note && (
+            <div className="beginner-note">
+              <span className="beginner-note-icon">💡</span>
+              <p>{video.beginner_note}</p>
+            </div>
+          )}
+          <p className="sec-intent">
+            <AnnotatedText
+              text={eli5 && video.plain_intent ? video.plain_intent : video.security_intent}
+              enabled={tooltips}
+            />
+            {eli5 && video.plain_intent && (
+              <span className="eli5-badge">plain english</span>
+            )}
+          </p>
 
           <div className="sec-cols">
             {video.attack_vectors?.length > 0 && (

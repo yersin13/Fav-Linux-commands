@@ -330,6 +330,93 @@ html, body {
   word-break: break-word;
 }
 
+/* ── BEGINNER NOTE ── */
+.beginner-note {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: rgba(210,153,34,.07); border: 1px solid rgba(210,153,34,.2);
+  border-radius: var(--r); padding: 10px 12px;
+}
+.beginner-note-icon { font-size: 14px; flex-shrink: 0; line-height: 1.5; }
+.beginner-note p    { font-size: 12px; color: #d29922; line-height: 1.6; }
+
+/* ── ELI5 BADGE ── */
+.eli5-badge {
+  display: inline-block; margin-left: 8px;
+  font-family: var(--mono); font-size: 9px; text-transform: uppercase;
+  letter-spacing: .5px; padding: 1px 6px; border-radius: 3px;
+  background: rgba(57,211,83,.1); color: var(--green); border: 1px solid rgba(57,211,83,.2);
+  vertical-align: middle;
+}
+
+/* ── TERM TOOLTIPS ── */
+.term-wrap     { position: relative; display: inline; }
+.term-highlight {
+  border-bottom: 1px dashed var(--blue-hat);
+  color: var(--blue-hat); cursor: help;
+  transition: border-color .1s;
+}
+.term-tooltip {
+  position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+  z-index: 500; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 8px 12px; width: 220px;
+  pointer-events: none; box-shadow: 0 4px 16px rgba(0,0,0,.4);
+}
+.term-tooltip.tooltip-below { bottom: auto; top: calc(100% + 6px); }
+.tt-term { font-family: var(--mono); font-size: 11px; color: var(--green); display: block; margin-bottom: 4px; font-weight: 700; }
+.tt-def  { font-size: 11px; color: var(--text2); line-height: 1.5; display: block; }
+
+/* ── GLOSSARY ── */
+.gl-view { width: 100%; }
+.gl-cat-filters { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+.gl-cat-btn {
+  padding: 4px 12px; background: var(--bg2); border: 1px solid var(--border);
+  color: var(--text2); border-radius: 20px; cursor: pointer;
+  font-family: var(--mono); font-size: 11px; transition: all .12s;
+}
+.gl-cat-btn:hover { border-color: var(--blue-hat); color: var(--blue-hat); }
+.gl-cat-btn.active { border-color: var(--blue-hat); color: var(--blue-hat); background: rgba(88,166,255,.08); }
+
+.gl-list { display: flex; flex-direction: column; gap: 6px; margin-top: 20px; }
+.gl-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r);
+  overflow: hidden; cursor: pointer; transition: border-color .12s;
+}
+.gl-card:hover { border-color: var(--text3); }
+.gl-card.open  { border-color: var(--blue-hat); }
+
+.gl-card-header {
+  display: grid; grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto; gap: 2px 12px;
+  padding: 12px 16px; align-items: start;
+}
+.gl-term-row { display: flex; align-items: center; gap: 8px; grid-column: 1; }
+.gl-term     { font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--text); }
+.gl-short    { font-size: 12px; color: var(--text2); line-height: 1.5; grid-column: 1; }
+.gl-caret    { grid-column: 2; grid-row: 1; color: var(--text3); font-size: 11px; align-self: center; }
+
+.gl-cat-pill {
+  font-family: var(--mono); font-size: 9px; padding: 1px 7px; border-radius: 10px;
+  text-transform: uppercase; letter-spacing: .4px; border: 1px solid;
+}
+.gl-cat-shells     { background: rgba(248,81,73,.08);   color: var(--black-hat); border-color: rgba(248,81,73,.25); }
+.gl-cat-privilege  { background: rgba(255,123,114,.08); color: var(--red-hat);   border-color: rgba(255,123,114,.25); }
+.gl-cat-payloads   { background: rgba(248,81,73,.08);   color: var(--black-hat); border-color: rgba(248,81,73,.25); }
+.gl-cat-recon      { background: rgba(255,123,114,.08); color: var(--red-hat);   border-color: rgba(255,123,114,.25); }
+.gl-cat-persistence{ background: rgba(248,81,73,.1);    color: var(--black-hat); border-color: rgba(248,81,73,.3); }
+.gl-cat-exfil      { background: rgba(255,123,114,.08); color: var(--red-hat);   border-color: rgba(255,123,114,.25); }
+.gl-cat-network    { background: rgba(88,166,255,.08);  color: var(--blue-hat);  border-color: rgba(88,166,255,.25); }
+.gl-cat-crypto     { background: rgba(210,153,34,.08);  color: #d29922;          border-color: rgba(210,153,34,.25); }
+.gl-cat-frameworks { background: rgba(57,211,83,.08);   color: var(--green);     border-color: rgba(57,211,83,.25); }
+.gl-cat-linux      { background: rgba(139,148,158,.08); color: var(--gray-hat);  border-color: rgba(139,148,158,.25); }
+
+.gl-body {
+  border-top: 1px solid var(--border); padding: 14px 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.gl-full      { font-size: 13px; color: var(--text); line-height: 1.8; }
+.gl-commands  { display: flex; flex-direction: column; gap: 6px; }
+.gl-cmd-label { font-family: var(--mono); font-size: 10px; color: var(--text3); }
+
 /* ── TOOLBOOK SECTIONS ── */
 .toolbook-section { border-top: 1px solid var(--bg4); padding-top: 12px; margin-top: 4px; }
 .toolbook-label { color: var(--green) !important; }

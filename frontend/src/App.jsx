@@ -9,6 +9,7 @@ import ChainBuilder from './components/ChainBuilder'
 import CTFView from './components/CTFView'
 import ExportButton from './components/ExportButton'
 import PlaygroundView from './components/PlaygroundView'
+import GlossaryView from './components/GlossaryView'
 import { useBookmarks } from './hooks/useBookmarks'
 import { useProgress } from './hooks/useProgress'
 
@@ -21,6 +22,8 @@ export default function App() {
   const [view, setView]           = useState('notes') // notes | chains | builder | ctf
   const [modal, setModal]         = useState(null)    // video object or null
   const [bookmarksOnly, setBookmarksOnly] = useState(false)
+  const [eli5, setEli5]           = useState(false)
+  const [tooltips, setTooltips]   = useState(false)
 
   const { bookmarks, toggle: toggleBookmark, isBookmarked } = useBookmarks()
   const { learned, toggleLearned, isLearned, progressByHat } = useProgress()
@@ -91,6 +94,7 @@ export default function App() {
           { id: 'ctf',     icon: '⚡', label: 'CTF' },
           { id: 'builder',    icon: '⌘', label: 'Build' },
           { id: 'playground', icon: '▸', label: 'Play' },
+          { id: 'glossary',   icon: '?', label: 'Terms' },
         ].map(({ id, icon, label }) => (
           <button
             key={id}
@@ -124,6 +128,7 @@ export default function App() {
             { id: 'ctf',     label: 'CTF Toolkit' },
             { id: 'builder',    label: 'Chain Builder' },
             { id: 'playground', label: 'Playground ▸' },
+            { id: 'glossary',   label: 'Glossary' },
           ].map(({ id, label }) => (
             <button
               key={id}
@@ -155,6 +160,24 @@ export default function App() {
                   {bookmarksOnly ? '★ showing bookmarks' : `☆ bookmarks (${bookmarks.length})`}
                 </button>
               </div>
+              <div className="sidebar-section">
+                <p className="filter-label" style={{ marginTop: '20px' }}>// reading mode</p>
+                <button
+                  className={`sidebar-toggle${eli5 ? ' active' : ''}`}
+                  onClick={() => setEli5((e) => !e)}
+                  title="Switch descriptions to plain english"
+                >
+                  {eli5 ? '◉ plain english on' : '◎ plain english'}
+                </button>
+                <button
+                  className={`sidebar-toggle${tooltips ? ' active' : ''}`}
+                  style={{ marginTop: '4px' }}
+                  onClick={() => setTooltips((t) => !t)}
+                  title="Highlight security terms with hover definitions"
+                >
+                  {tooltips ? '◉ term tooltips on' : '◎ term tooltips'}
+                </button>
+              </div>
             </aside>
 
             <main className="main-content">
@@ -179,6 +202,8 @@ export default function App() {
                     onBookmark={() => toggleBookmark(v.command)}
                     onLearn={() => toggleLearned(v.command)}
                     onOpenModal={() => setModal(v)}
+                    eli5={eli5}
+                    tooltips={tooltips}
                   />
                 ))}
               </div>
@@ -207,6 +232,15 @@ export default function App() {
         {view === 'playground' && (
           <main className="main-content full">
             <PlaygroundView videos={knowledge.videos} />
+          </main>
+        )}
+
+        {view === 'glossary' && (
+          <main className="main-content full">
+            <GlossaryView
+              allVideos={knowledge.videos}
+              onCommandClick={(v) => { setModal(v) }}
+            />
           </main>
         )}
       </div>

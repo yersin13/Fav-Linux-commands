@@ -8,6 +8,7 @@ import CommandModal from './components/CommandModal'
 import ChainBuilder from './components/ChainBuilder'
 import CTFView from './components/CTFView'
 import ExportButton from './components/ExportButton'
+import PlaygroundView from './components/PlaygroundView'
 import { useBookmarks } from './hooks/useBookmarks'
 import { useProgress } from './hooks/useProgress'
 
@@ -88,7 +89,8 @@ export default function App() {
           { id: 'notes',   icon: '◈', label: 'Intel' },
           { id: 'chains',  icon: '⛓', label: 'Chains' },
           { id: 'ctf',     icon: '⚡', label: 'CTF' },
-          { id: 'builder', icon: '⌘', label: 'Build' },
+          { id: 'builder',    icon: '⌘', label: 'Build' },
+          { id: 'playground', icon: '▸', label: 'Play' },
         ].map(({ id, icon, label }) => (
           <button
             key={id}
@@ -120,7 +122,8 @@ export default function App() {
             { id: 'notes',   label: 'Intelligence' },
             { id: 'chains',  label: `Chains (${knowledge.attack_chains.length})` },
             { id: 'ctf',     label: 'CTF Toolkit' },
-            { id: 'builder', label: 'Chain Builder' },
+            { id: 'builder',    label: 'Chain Builder' },
+            { id: 'playground', label: 'Playground ▸' },
           ].map(({ id, label }) => (
             <button
               key={id}
@@ -198,6 +201,12 @@ export default function App() {
         {view === 'builder' && (
           <main className="main-content full">
             <ChainBuilder videos={knowledge.videos} />
+          </main>
+        )}
+
+        {view === 'playground' && (
+          <main className="main-content full">
+            <PlaygroundView videos={knowledge.videos} />
           </main>
         )}
       </div>

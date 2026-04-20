@@ -890,12 +890,182 @@ html, body {
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text3); }
 
-/* ── RESPONSIVE ── */
+/* ══════════════════════════════════════════════
+   BOTTOM NAV (mobile only — hidden on desktop)
+══════════════════════════════════════════════ */
+.bottom-nav { display: none; }
+
+/* ══════════════════════════════════════════════
+   TABLET  ≤ 900px
+══════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .app-body { flex-direction: column; padding: 16px; }
-  .sidebar { width: 100%; }
-  .hat-filter { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  /* header */
+  .app-header { padding: 12px 16px; gap: 10px; }
+  .logo-sub   { display: none; }
+  .stats-bar  { gap: 5px; }
+  .stat-pill  { padding: 3px 8px; }
+  .stat-count { font-size: 12px; }
+  .stat-progress-bar { display: none; }
+
+  /* body */
+  .app-body { flex-direction: column; padding: 14px 16px; gap: 14px; }
+  .sidebar  { width: 100%; }
+
+  /* hat filter → horizontal scroll strip */
+  .hat-filter { flex-direction: row; flex-wrap: nowrap; overflow-x: auto; gap: 6px; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+  .hat-filter::-webkit-scrollbar { display: none; }
+  .hat-btn    { white-space: nowrap; flex-shrink: 0; padding: 6px 12px; }
+  .hat-progress-bar { display: none; }
   .hat-legend { display: none; }
+  .filter-label { display: none; }
+
+  /* sidebar section */
+  .sidebar-section { margin-top: 0; }
+
+  /* cards */
   .sec-cols { grid-template-columns: 1fr; }
   .chains-grid { grid-template-columns: 1fr; }
+  .rvu-grid { grid-template-columns: 1fr; }
+  .modal-two-col { grid-template-columns: 1fr; }
+
+  /* main toolbar */
+  .main-toolbar { flex-direction: column; align-items: stretch; gap: 8px; }
+  .main-toolbar .search-bar { margin-bottom: 0; }
+
+  /* CTF grid */
+  .ctf-grid { grid-template-columns: 1fr; }
+
+  /* chain builder */
+  .builder-layout { grid-template-columns: 1fr; }
+  .picker-list    { max-height: 220px; }
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE  ≤ 600px
+══════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  /* header — compact single row */
+  .app-header {
+    padding: 10px 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .header-left  { flex-direction: row; align-items: center; gap: 10px; }
+  .stats-bar    { display: none; }          /* stats hidden; progress shown in sidebar */
+  .header-nav   { display: none; }          /* replaced by bottom tab bar */
+
+  /* bottom tab bar */
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .bottom-nav-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 8px 4px;
+    background: none;
+    border: none;
+    color: var(--text3);
+    font-family: var(--mono);
+    font-size: 9px;
+    cursor: pointer;
+    transition: color .12s;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bottom-nav-btn .bn-icon { font-size: 16px; }
+  .bottom-nav-btn:hover,
+  .bottom-nav-btn.active  { color: var(--green); }
+  .bottom-nav-btn.active .bn-icon { color: var(--green); }
+
+  /* body: add bottom padding for tab bar */
+  .app-body { padding: 12px 12px 76px; gap: 12px; }
+
+  /* sidebar — horizontal scroll, no separator */
+  .sidebar { order: -1; }
+
+  /* cards */
+  .sec-header { padding: 10px 12px; gap: 8px; flex-wrap: wrap; }
+  .sec-header-left  { gap: 7px; }
+  .sec-header-right { gap: 6px; width: 100%; justify-content: space-between; }
+  .sec-title-short  { font-size: 11px; flex: 1; }
+  .sec-body { padding: 12px 14px; gap: 12px; }
+  .sec-command { font-size: 13px; }
+
+  /* card actions: bigger tap targets */
+  .card-action-btn { padding: 4px 8px; font-size: 15px; }
+
+  /* quick use / combo code blocks */
+  .quick-use-item  { flex-direction: column; align-items: flex-start; }
+  .combo-example-wrap { flex-direction: column; align-items: flex-start; }
+  .quick-use-code,
+  .combo-example { width: 100%; font-size: 11px; }
+  .copy-btn { align-self: flex-end; margin-top: 4px; }
+
+  /* results label */
+  .results-label { font-size: 10px; }
+
+  /* modal — full screen */
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal-panel {
+    max-width: 100%;
+    border-radius: var(--r) var(--r) 0 0;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+  .modal-topbar { padding: 12px 14px 10px; position: sticky; top: 0; }
+  .modal-body { padding: 14px; gap: 16px; }
+  .modal-command { font-size: 16px; }
+  .modal-two-col { grid-template-columns: 1fr; }
+
+  /* chain simulator — full screen */
+  .simulator-overlay { padding: 0; align-items: flex-end; }
+  .simulator-panel {
+    max-width: 100%;
+    border-radius: var(--r) var(--r) 0 0;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+  .simulator-track { overflow-x: auto; flex-wrap: nowrap; padding: 10px 14px; }
+  .simulator-track::-webkit-scrollbar { display: none; }
+  .sim-node { flex-shrink: 0; }
+  .simulator-step { padding: 14px; }
+  .simulator-nav  { flex-wrap: wrap; padding: 10px 14px; gap: 6px; }
+  .sim-btn        { flex: 1; min-width: 70px; text-align: center; }
+
+  /* chain builder */
+  .builder-canvas-header { flex-direction: column; align-items: stretch; gap: 8px; }
+  .builder-actions { justify-content: flex-end; }
+  .builder-step  { flex-wrap: wrap; }
+  .builder-step-right { flex-direction: row; gap: 6px; }
+
+  /* chains view */
+  .chain-cmd-pills { flex-wrap: wrap; }
+  .chains-controls { flex-direction: column; gap: 8px; }
+  .chain-hat-filters { flex-wrap: wrap; }
+  .chain-steps-actions { padding: 0 0 8px 0; }
+
+  /* CTF */
+  .ctf-cat-filters { gap: 4px; }
+  .ctf-cat-btn { padding: 5px 10px; font-size: 11px; }
+  .ctf-grid { grid-template-columns: 1fr; }
+
+  /* export dropdown */
+  .export-dropdown { right: auto; left: 0; }
+
+  /* step examples — prevent horizontal overflow */
+  .step-example { font-size: 11px; word-break: break-all; }
+  pre { max-width: 100%; overflow-x: auto; }
 }

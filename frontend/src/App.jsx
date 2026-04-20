@@ -83,6 +83,24 @@ export default function App() {
         />
       )}
 
+      <nav className="bottom-nav">
+        {[
+          { id: 'notes',   icon: '◈', label: 'Intel' },
+          { id: 'chains',  icon: '⛓', label: 'Chains' },
+          { id: 'ctf',     icon: '⚡', label: 'CTF' },
+          { id: 'builder', icon: '⌘', label: 'Build' },
+        ].map(({ id, icon, label }) => (
+          <button
+            key={id}
+            className={`bottom-nav-btn${view === id ? ' active' : ''}`}
+            onClick={() => setView(id)}
+          >
+            <span className="bn-icon">{icon}</span>
+            <span>{label}</span>
+          </button>
+        ))}
+      </nav>
+
       <header className="app-header">
         <div className="header-left">
           <div className="logo">

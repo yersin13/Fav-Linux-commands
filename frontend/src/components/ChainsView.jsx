@@ -17,7 +17,69 @@ function CopyButton({ text }) {
   )
 }
 
-function ChainCard({ chain, videosByCommand }) {
+function ChainSimulator({ chain, onExit }) {
+  const [step, setStep] = useState(0)
+  const total = chain.steps.length
+  const current = chain.steps[step]
+
+  return (
+    <div className="simulator-overlay">
+      <div className="simulator-panel">
+        <div className="simulator-header">
+          <span className={`hat-badge hat-badge-${chain.hat}`}>{HAT_LABELS[chain.hat]}</span>
+          <span className="simulator-title">{chain.name}</span>
+          <span className="simulator-progress">{step + 1} / {total}</span>
+          <button className="modal-close" onClick={onExit}>✕</button>
+        </div>
+
+        <div className="simulator-track">
+          {chain.steps.map((_, i) => (
+            <button
+              key={i}
+              className={`sim-node${i === step ? ' active' : i < step ? ' done' : ''}`}
+              onClick={() => setStep(i)}
+            >
+              {String(i + 1).padStart(2, '0')}
+            </button>
+          ))}
+          <div className="sim-track-line" style={{ width: `${(step / (total - 1)) * 100}%` }} />
+        </div>
+
+        <div className="simulator-step">
+          <div className="step-number">{String(step + 1).padStart(2, '0')}</div>
+          <div className="step-body">
+            <div className="step-head">
+              <span className="step-name">$ {current.step}</span>
+              <span className="step-action">{current.action}</span>
+            </div>
+            <div className="step-example-wrap">
+              <pre className="step-example">{current.example}</pre>
+              <CopyButton text={current.example} />
+            </div>
+            {current.note && (
+              <p className="step-note"><span className="note-prefix">// </span>{current.note}</p>
+            )}
+          </div>
+        </div>
+
+        <div className="simulator-nav">
+          <button className="sim-btn" onClick={() => setStep(0)} disabled={step === 0}>⟪ start</button>
+          <button className="sim-btn" onClick={() => setStep((s) => s - 1)} disabled={step === 0}>◀ prev</button>
+          <button className="sim-btn primary" onClick={() => setStep((s) => s + 1)} disabled={step === total - 1}>next ▶</button>
+          <button className="sim-btn" onClick={() => setStep(total - 1)} disabled={step === total - 1}>end ⟫</button>
+        </div>
+
+        {step === total - 1 && (
+          <div className="simulator-done">
+            <span className="done-icon">✓</span> Chain complete — {total} steps executed
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function ChainCard({ chain, videosByCommand, onSimulate }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -35,8 +97,8 @@ function ChainCard({ chain, videosByCommand }) {
             return v ? (
               <a
                 key={cmd}
-                href={v.video_url}
-                target="_blank"
+                href={v.video_url || '#'}
+                target={v.video_url ? '_blank' : undefined}
                 rel="noopener noreferrer"
                 className={`chain-pill linked hat-cmd-${v.hat}`}
                 onClick={(e) => e.stopPropagation()}
@@ -52,6 +114,14 @@ function ChainCard({ chain, videosByCommand }) {
 
       {open && (
         <div className="chain-steps">
+          <div className="chain-steps-actions">
+            <button
+              className="simulate-btn"
+              onClick={(e) => { e.stopPropagation(); onSimulate(chain) }}
+            >
+              [▶] simulate step-by-step
+            </button>
+          </div>
           {chain.steps.map((step, i) => (
             <div key={i} className="chain-step">
               <div className="step-number">{String(i + 1).padStart(2, '0')}</div>
@@ -81,6 +151,7 @@ function ChainCard({ chain, videosByCommand }) {
 export default function ChainsView({ chains, videos }) {
   const [hatFilter, setHatFilter] = useState('all')
   const [search, setSearch]       = useState('')
+  const [simChain, setSimChain]   = useState(null)
 
   const videosByCommand = {}
   videos.forEach((v) => { videosByCommand[v.command.toLowerCase()] = v })
@@ -106,14 +177,16 @@ export default function ChainsView({ chains, videos }) {
 
   return (
     <div className="chains-view">
+      {simChain && <ChainSimulator chain={simChain} onExit={() => setSimChain(null)} />}
+
       <div className="chains-header">
         <div className="chains-title-row">
           <h2 className="chains-title">// attack &amp; defense chains</h2>
           <span className="chains-count">{filtered.length} chains</span>
         </div>
         <p className="chains-sub">
-          Real-world multi-step scenarios. Each chain links back to the relevant videos in the playlist.
-          Commands outside the playlist are marked as external. All examples are VM-ready.
+          Real-world multi-step scenarios. Click [▶] simulate to step through any chain interactively.
+          Commands with videos are linked. All examples are VM-ready.
         </p>
         <div className="chains-controls">
           <div className="chain-hat-filters">
@@ -142,7 +215,7 @@ export default function ChainsView({ chains, videos }) {
 
       <div className="chains-list">
         {filtered.map((chain, i) => (
-          <ChainCard key={i} chain={chain} videosByCommand={videosByCommand} />
+          <ChainCard key={i} chain={chain} videosByCommand={videosByCommand} onSimulate={setSimChain} />
         ))}
       </div>
     </div>

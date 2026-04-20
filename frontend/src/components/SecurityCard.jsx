@@ -18,22 +18,46 @@ function CopyButton({ text }) {
   )
 }
 
-export default function SecurityCard({ video }) {
+export default function SecurityCard({ video, bookmarked, learned, onBookmark, onLearn, onOpenModal }) {
   const [open, setOpen] = useState(false)
   const [transcriptOpen, setTranscriptOpen] = useState(false)
 
   return (
-    <div className={`sec-card hat-border-${video.hat}${open ? ' open' : ''}`}>
+    <div className={`sec-card hat-border-${video.hat}${open ? ' open' : ''}${learned ? ' learned' : ''}`}>
       <div className="sec-header" onClick={() => setOpen(!open)}>
         <div className="sec-header-left">
           <span className={`hat-badge hat-badge-${video.hat}`}>{HAT_LABELS[video.hat]}</span>
           <span className="sec-command">$ {video.command}</span>
+          {video.extra && <span className="extra-badge">+</span>}
           {video.threat_level >= 4 && (
             <span className="threat-dot" title={`Threat: ${THREAT_LABELS[video.threat_level]}`} />
           )}
         </div>
         <div className="sec-header-right">
           <span className="sec-title-short">{video.title}</span>
+          <div className="card-actions" onClick={(e) => e.stopPropagation()}>
+            <button
+              className={`card-action-btn${learned ? ' active-green' : ''}`}
+              onClick={onLearn}
+              title={learned ? 'Mark as not learned' : 'Mark as learned'}
+            >
+              {learned ? '✓' : '○'}
+            </button>
+            <button
+              className={`card-action-btn${bookmarked ? ' active-yellow' : ''}`}
+              onClick={onBookmark}
+              title={bookmarked ? 'Remove bookmark' : 'Bookmark'}
+            >
+              {bookmarked ? '★' : '☆'}
+            </button>
+            <button
+              className="card-action-btn"
+              onClick={onOpenModal}
+              title="Open full detail view"
+            >
+              ⤢
+            </button>
+          </div>
           <span className="expand-caret">{open ? '▾' : '▸'}</span>
         </div>
       </div>
@@ -74,6 +98,28 @@ export default function SecurityCard({ video }) {
                 <span className={`threat-badge threat-${THREAT_LABELS[video.threat_level]}`}>
                   {THREAT_LABELS[video.threat_level]}
                 </span>
+              </div>
+            </div>
+          )}
+
+          {video.cve_refs?.length > 0 && (
+            <div className="sec-row">
+              <h4 className="col-label">// cve refs</h4>
+              <ul className="cve-list">
+                {video.cve_refs.map((c, i) => (
+                  <li key={i} className="cve-item"><span className="cve-bullet">⚠</span> {c}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {video.ctf_categories?.length > 0 && (
+            <div className="sec-row">
+              <h4 className="col-label">// ctf</h4>
+              <div className="tag-row">
+                {video.ctf_categories.map((c) => (
+                  <span key={c} className="ctf-tag">{c}</span>
+                ))}
               </div>
             </div>
           )}
@@ -123,10 +169,31 @@ export default function SecurityCard({ video }) {
             </div>
           )}
 
+          {video.root_vs_user?.root && (
+            <div className="sec-row toolbook-section">
+              <h4 className="col-label toolbook-label">// root vs user</h4>
+              <div className="rvu-grid">
+                <div className="rvu-card rvu-root">
+                  <span className="rvu-label">root</span>
+                  <p>{video.root_vs_user.root}</p>
+                </div>
+                <div className="rvu-card rvu-user">
+                  <span className="rvu-label">user</span>
+                  <p>{video.root_vs_user.user}</p>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="sec-footer">
-            <a href={video.video_url} target="_blank" rel="noopener noreferrer" className="yt-link">
-              [▶] Watch on YouTube
-            </a>
+            {video.video_url && (
+              <a href={video.video_url} target="_blank" rel="noopener noreferrer" className="yt-link">
+                [▶] Watch on YouTube
+              </a>
+            )}
+            <button className="transcript-btn" onClick={onOpenModal}>
+              [⤢] full detail view
+            </button>
             {video.transcript && (
               <button className="transcript-btn" onClick={() => setTranscriptOpen(!transcriptOpen)}>
                 {transcriptOpen ? '[▾] hide transcript' : '[▸] full transcript'}

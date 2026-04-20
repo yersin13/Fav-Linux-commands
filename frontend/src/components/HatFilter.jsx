@@ -6,23 +6,32 @@ const HATS = [
   { id: 'gray',  label: 'Utility',   icon: '·' },
 ]
 
-export default function HatFilter({ active, onChange, counts }) {
+export default function HatFilter({ active, onChange, counts, progress }) {
   return (
     <div className="hat-filter">
       <p className="filter-label">// filter by hat</p>
-      {HATS.map(({ id, label, icon }) => (
-        <button
-          key={id}
-          className={`hat-btn hat-btn-${id}${active === id ? ' active' : ''}`}
-          onClick={() => onChange(id)}
-        >
-          <span className="hat-btn-icon">{icon}</span>
-          <span className="hat-btn-label">{label}</span>
-          {id !== 'all' && counts[id] != null && (
-            <span className="hat-btn-count">{counts[id]}</span>
-          )}
-        </button>
-      ))}
+      {HATS.map(({ id, label, icon }) => {
+        const prog = progress?.[id]
+        const pct = prog && prog.total > 0 ? Math.round((prog.done / prog.total) * 100) : 0
+        return (
+          <button
+            key={id}
+            className={`hat-btn hat-btn-${id}${active === id ? ' active' : ''}`}
+            onClick={() => onChange(id)}
+          >
+            <span className="hat-btn-icon">{icon}</span>
+            <span className="hat-btn-label">{label}</span>
+            {id !== 'all' && counts[id] != null && (
+              <span className="hat-btn-count">{counts[id]}</span>
+            )}
+            {id !== 'all' && prog && prog.total > 0 && (
+              <div className="hat-progress-bar">
+                <div className="hat-progress-fill" style={{ width: `${pct}%` }} />
+              </div>
+            )}
+          </button>
+        )
+      })}
 
       <div className="hat-legend">
         <p className="filter-label" style={{ marginTop: '24px' }}>// legend</p>

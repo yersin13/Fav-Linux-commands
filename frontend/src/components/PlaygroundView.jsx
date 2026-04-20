@@ -180,15 +180,17 @@ function Flashcards({ videos }) {
 // ─── QUIZ MODE ────────────────────────────────────────────────────────────────
 
 function generateQuestion(videos, used) {
-  const pool  = videos.filter((v) => v.attack_vectors?.length > 0 && v.security_intent)
-  const rest  = pool.filter((v) => !used.has(v.command))
-  const src   = rest.length > 3 ? rest : pool
-  const type  = Math.floor(Math.random() * 3)
+  const pool   = videos.filter((v) => v.attack_vectors?.length > 0 && v.security_intent)
+  const rest   = pool.filter((v) => !used.has(v.command))
+  const src    = rest.length > 3 ? rest : pool
   const target = src[Math.floor(Math.random() * src.length)]
   const wrong3 = pick(pool.filter((v) => v.command !== target.command), 3)
 
+  // Alternate between two types: identify the function, identify the command
+  const type = Math.random() < 0.5 ? 0 : 1
+
   if (type === 0) {
-    // Given command → pick correct intent
+    // Given command → pick correct description
     const opts = shuffle([target, ...wrong3])
     return {
       type: 0,
@@ -196,31 +198,17 @@ function generateQuestion(videos, used) {
       options: opts.map((v) => ({ label: v.security_intent.slice(0, 90) + (v.security_intent.length > 90 ? '…' : ''), value: v.command })),
       answer: target.command,
       command: target.command,
-      hat: target.hat,
     }
-  } else if (type === 1) {
-    // Given intent snippet → pick command
-    const snippet = target.attack_vectors[0]
+  } else {
+    // Given use case / attack vector → pick command
+    const snippet = target.attack_vectors[Math.floor(Math.random() * target.attack_vectors.length)]
     const opts = shuffle([target, ...wrong3])
     return {
       type: 1,
-      question: `Which command is associated with:  "${snippet}"?`,
+      question: `Which command is used for:  "${snippet}"?`,
       options: opts.map((v) => ({ label: `$ ${v.command}`, value: v.command })),
       answer: target.command,
       command: target.command,
-      hat: target.hat,
-    }
-  } else {
-    // Given command → pick hat
-    const hats = ['black', 'red', 'blue', 'gray']
-    const opts = shuffle(hats)
-    return {
-      type: 2,
-      question: `What hat classification is  $ ${target.command} ?`,
-      options: opts.map((h) => ({ label: HAT_LABELS[h], value: h })),
-      answer: target.hat,
-      command: target.command,
-      hat: target.hat,
     }
   }
 }
@@ -269,7 +257,7 @@ function Quiz({ videos }) {
 
       <div className="quiz-card">
         <div className="quiz-type-label">
-          {['identify the function', 'identify the command', 'identify the hat'][q.type]}
+          {['identify the function', 'identify the command'][q.type]}
         </div>
         <p className="quiz-question">{q.question}</p>
       </div>
@@ -284,7 +272,6 @@ function Quiz({ videos }) {
           }
           return (
             <button key={opt.value} className={cls} onClick={() => choose(opt.value)}>
-              {q.type === 2 && <span className={`hat-dot ${opt.value}`} style={{ display: 'inline-block', marginRight: 8 }} />}
               {opt.label}
             </button>
           )
